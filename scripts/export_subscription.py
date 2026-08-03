@@ -126,6 +126,34 @@ def vmess_uri(o: dict) -> str | None:
     return f"vmess://{raw}"
 
 
+def hysteria2_uri(o: dict) -> str | None:
+    """回写 hysteria2/hy2 分享链，供 fsl64 等通用订阅使用。"""
+    host, port = o.get("server"), o.get("server_port")
+    password = o.get("password")
+    if not (host and port and password is not None and str(password) != ""):
+        return None
+    tls = o.get("tls") or {}
+    params: dict[str, str] = {}
+    sni = tls.get("server_name") or host
+    if sni:
+        params["sni"] = str(sni)
+    if tls.get("insecure"):
+        params["insecure"] = "1"
+    obfs = o.get("obfs") or {}
+    if isinstance(obfs, dict) and obfs.get("type"):
+        params["obfs"] = str(obfs.get("type"))
+        if obfs.get("password") is not None and str(obfs.get("password")) != "":
+            params["obfs-password"] = str(obfs.get("password"))
+    # 兼容部分客户端字段
+    if o.get("up_mbps") is not None:
+        params["upmbps"] = str(o.get("up_mbps"))
+    if o.get("down_mbps") is not None:
+        params["downmbps"] = str(o.get("down_mbps"))
+    name = o.get("tag") or f"{host}:{port}"
+    query = f"?{urlencode(params, quote_via=quote)}" if params else ""
+    return f"hysteria2://{q(password)}@{host}:{port}{query}#{q(name)}"
+
+
 def to_uri(o: dict) -> str | None:
     t = o.get("type")
     if t == "vless":
@@ -136,6 +164,8 @@ def to_uri(o: dict) -> str | None:
         return trojan_uri(o)
     if t == "vmess":
         return vmess_uri(o)
+    if t in ("hysteria2", "hy2"):
+        return hysteria2_uri(o)
     return None
 
 
@@ -220,6 +250,31 @@ def clash_proxy(o: dict) -> dict | None:
         if tr.get("type") == "ws":
             p["network"] = "ws"
             p["ws-opts"] = {"path": tr.get("path") or "/", "headers": tr.get("headers") or {}}
+        return p
+    if t in ("hysteria2", "hy2"):
+        # Clash Meta / mihomo
+        p = {
+            "name": name,
+            "type": "hysteria2",
+            "server": o.get("server"),
+            "port": o.get("server_port"),
+            "password": o.get("password"),
+            "udp": True,
+        }
+        tls = o.get("tls") or {}
+        if tls.get("server_name"):
+            p["sni"] = tls["server_name"]
+        if tls.get("insecure"):
+            p["skip-cert-verify"] = True
+        obfs = o.get("obfs") or {}
+        if isinstance(obfs, dict) and obfs.get("type"):
+            p["obfs"] = obfs.get("type")
+            if obfs.get("password") is not None and str(obfs.get("password")) != "":
+                p["obfs-password"] = obfs.get("password")
+        if o.get("up_mbps") is not None:
+            p["up"] = o.get("up_mbps")
+        if o.get("down_mbps") is not None:
+            p["down"] = o.get("down_mbps")
         return p
     if t == "wireguard":
         addrs = o.get("local_address") or []
@@ -452,7 +507,8 @@ def main() -> int:
             continue
         uri = to_uri(o)
         if not uri:
-            skipped.append({"tag": o.get("tag"), "reason": "uri build failed"})
+            reason = "uri build failed (%s)" % (o.get("type") or "unknown")
+            skipped.append({"tag": o.get("tag"), "type": o.get("type"), "reason": reason})
             continue
         uris.append(uri)
         by.setdefault(str(o.get("type") or "other"), []).append(uri)

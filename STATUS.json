@@ -1,14 +1,15 @@
 {
-  "updated_at": "2026-08-03T11:39:53.781765+00:00",
+  "updated_at": "2026-08-03T22:20:14.186270+08:00",
   "conclusion": "success",
   "subscription": {
-    "share_link_count": 1312,
-    "clash_proxy_count": 1312,
+    "share_link_count": 1401,
+    "clash_proxy_count": 1401,
     "by_protocol": {
       "vless": 990,
       "shadowsocks": 195,
       "trojan": 41,
-      "vmess": 86
+      "vmess": 86,
+      "hysteria2": 89
     }
   },
   "singbox": {
@@ -29,5 +30,6 @@
     "pass": 5732,
     "fail": 22810,
     "conclusion": "success"
-  }
+  },
+  "note": "re-export with hysteria2 share/clash support; no live re-probe"
 }

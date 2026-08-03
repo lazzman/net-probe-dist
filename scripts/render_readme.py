@@ -117,7 +117,7 @@ def main() -> int:
     b_workers = shield("workers", badge_val(workers), "blueviolet")
     b_result = shield("result", str(conclusion), conc_color, "githubactions")
     b_profiles = shield("profiles", badge_val(verified), "blue")
-    b_pass = shield("live_pass", badge_val(public_pass), "brightgreen")
+    b_pass = shield("live_hits", badge_val(public_pass), "brightgreen")
     b_fail = shield("live_fail", badge_val(public_fail), "orange")
     b_elapsed = shield("elapsed", elapsed_s.replace(" ", "_"), "lightgrey")
 
@@ -152,12 +152,23 @@ Packages are attached to **GitHub Releases** (not stored in git history).
 | **Elapsed** | `{elapsed_s}` |
 | **Probe mode** | `{fmt(mode)}` |
 | **Candidates (unique)** | `{fmt(public_unique)}` |
-| **Live PASS (raw)** | `{fmt(public_pass)}` |
+| **Live PASS (raw hits)** | `{fmt(public_pass)}` |
 | **Live FAIL** | `{fmt(public_fail)}` |
-| **Published profiles** | `{fmt(verified)}` |
-| **Share links** | `{fmt(share_n)}` |
-| **YAML proxies** | `{fmt(clash_n)}` |
+| **Published profiles (deduped)** | `{fmt(verified)}` |
+| **Share links (exportable)** | `{fmt(share_n)}` |
+| **YAML proxies (exportable)** | `{fmt(clash_n)}` |
 | **Protocol mix** | `{json.dumps(by_proto, ensure_ascii=False)}` |
+
+### Number funnel
+
+These fields are **not** the same quantity:
+
+1. **Candidates (unique)** — 公开订阅去重后的候选链接数  
+2. **Live PASS (raw hits)** — 探测过程中判 PASS 的**次数**（同一 endpoint 多条链接会重复计数）  
+3. **Published profiles (deduped)** — 按 `type:server:port:凭证` 指纹去重后的最终 outbound 数（`fslsb` 接近此值）  
+4. **Share links / YAML proxies** — 能导出为通用分享链 / Clash 的节点（现含 vless/ss/trojan/vmess/**hysteria2**）
+
+所以常见现象：Live PASS 五千多，最终订阅一千多——主要是重复 endpoint 被合并，而不是探测结果被丢弃。
 
 ## Latest packages
 
