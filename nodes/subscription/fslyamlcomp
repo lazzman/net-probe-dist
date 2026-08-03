@@ -1,0 +1,3624 @@
+# Clash 老版兼容 / fslyamlcomp
+# generated_at: 2026-08-03T09:28:16.174261+08:00
+# count: 336
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: rule
+log-level: info
+proxies:
+  - name: public_sub_ss-202
+    type: ss
+    server: 82.38.31.15
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-213
+    type: ss
+    server: 141.98.101.178
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: public_sub_ss-217
+    type: ss
+    server: 82.38.31.162
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-218
+    type: ss
+    server: 141.98.101.181
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: public_sub_ss-220
+    type: ss
+    server: 188.41.249.20
+    port: 1080
+    cipher: chacha20-ietf-poly1305
+    password: rYfi4cQ3z7zts7BO4-Y9_A
+    udp: true
+  - name: public_sub_ss-240
+    type: ss
+    server: 198.98.53.130
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: eDfN7SODQceIOmIAbtJJtK
+    udp: true
+  - name: public_sub_ss-251
+    type: ss
+    server: 109.104.154.163
+    port: 2375
+    cipher: aes-256-gcm
+    password: faBAoD54k87UJG7
+    udp: true
+  - name: public_sub_ss-262
+    type: ss
+    server: 103.120.178.193
+    port: 31348
+    cipher: chacha20-ietf-poly1305
+    password: EBDRo9THx4CqiFU7h5gfov76oNwzZURAh0ZwbWjBKddtUhvz
+    udp: true
+  - name: public_sub_ss-271
+    type: ss
+    server: 193.42.38.209
+    port: 1080
+    cipher: chacha20-ietf-poly1305
+    password: XF0klw7870vXn3uQIxe19Q
+    udp: true
+  - name: public_sub_ss-275
+    type: ss
+    server: 47.81.56.202
+    port: 44617
+    cipher: chacha20-ietf-poly1305
+    password: lhuULRwO4slM6k262pAC4cbq5A1H6z8eaOHV27vi7Yw=
+    udp: true
+  - name: public_sub_ss-282
+    type: ss
+    server: 141.227.152.129
+    port: 8388
+    cipher: chacha20-ietf-poly1305
+    password: bBnV36tzt7MKV75aDZTbzG
+    udp: true
+  - name: public_sub_ss-266
+    type: ss
+    server: 137.74.119.18
+    port: 10443
+    cipher: chacha20-ietf-poly1305
+    password: diOMBU5IDvJcFqyNPbRjYR
+    udp: true
+  - name: public_sub_ss-314
+    type: ss
+    server: r3mrcg001287h3p.cybervena.com
+    port: 50099
+    cipher: chacha20-ietf-poly1305
+    password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
+    udp: true
+  - name: public_sub_ss-405
+    type: ss
+    server: 89.34.230.135
+    port: 30736
+    cipher: chacha20-ietf-poly1305
+    password: _8vt09n7I9Kl64RYzLLwYe3V
+    udp: true
+  - name: public_sub_ss-446
+    type: ss
+    server: 82.38.31.180
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-444
+    type: ss
+    server: 82.38.31.179
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-452
+    type: ss
+    server: 82.38.31.181
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-461
+    type: ss
+    server: 82.38.31.192
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-458
+    type: ss
+    server: 82.38.31.190
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-464
+    type: ss
+    server: 82.38.31.199
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-455
+    type: ss
+    server: 82.38.31.185
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-463
+    type: ss
+    server: 82.38.31.195
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-457
+    type: ss
+    server: 82.38.31.187
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-472
+    type: ss
+    server: 82.38.31.206
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-466
+    type: ss
+    server: 82.38.31.202
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-475
+    type: ss
+    server: 82.38.31.207
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-478
+    type: ss
+    server: 82.38.31.211
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-480
+    type: ss
+    server: 82.38.31.213
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-477
+    type: ss
+    server: 82.38.31.208
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-479
+    type: ss
+    server: 82.38.31.212
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-485
+    type: ss
+    server: 82.38.31.215
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-484
+    type: ss
+    server: 82.38.31.214
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-486
+    type: ss
+    server: 82.38.31.216
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-489
+    type: ss
+    server: 82.38.31.218
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-490
+    type: ss
+    server: 82.38.31.219
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-505
+    type: ss
+    server: 193.29.139.151
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-509
+    type: ss
+    server: 82.38.31.11
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-507
+    type: ss
+    server: 193.29.139.235
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-506
+    type: ss
+    server: 193.29.139.204
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-504
+    type: ss
+    server: 193.29.139.144
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-508
+    type: ss
+    server: 82.38.31.10
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-529
+    type: ss
+    server: 82.38.31.164
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-530
+    type: ss
+    server: 82.38.31.26
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-534
+    type: ss
+    server: 82.38.31.28
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-537
+    type: ss
+    server: 82.38.31.35
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-535
+    type: ss
+    server: 82.38.31.29
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-538
+    type: ss
+    server: 82.38.31.35
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-546
+    type: ss
+    server: 82.38.31.47
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-553
+    type: ss
+    server: 82.38.31.57
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-561
+    type: ss
+    server: 82.38.31.9
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-560
+    type: ss
+    server: 82.38.31.7
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-580
+    type: ss
+    server: 140.174.184.5
+    port: 8388
+    cipher: chacha20-ietf-poly1305
+    password: qItG8SueYQcP
+    udp: true
+  - name: public_sub_ss-611
+    type: ss
+    server: vpna.poorifast.ir
+    port: 1080
+    cipher: chacha20-ietf-poly1305
+    password: rYfi4cQ3z7zts7BO4-Y9_A
+    udp: true
+  - name: public_sub_ss-609
+    type: ss
+    server: Vpna.Poorifast.ir
+    port: 1080
+    cipher: chacha20-ietf-poly1305
+    password: rYfi4cQ3z7zts7BO4-Y9_A
+    udp: true
+  - name: public_sub_ss-625
+    type: ss
+    server: 173.244.56.6
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: public_sub_ss-621
+    type: ss
+    server: 149.22.87.240
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: public_sub_ss-623
+    type: ss
+    server: 156.146.38.169
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: public_sub_ss-629
+    type: ss
+    server: 37.19.198.236
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: public_sub_ss-620
+    type: ss
+    server: 149.22.87.204
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: public_sub_ss-630
+    type: ss
+    server: 37.19.198.244
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: public_sub_ss-622
+    type: ss
+    server: 149.22.87.241
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: public_sub_ss-633
+    type: ss
+    server: 158.173.20.208
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: public_sub_ss-639
+    type: ss
+    server: 13.61.5.244
+    port: 443
+    cipher: aes-256-cfb
+    password: amazonskr05
+    udp: true
+  - name: public_sub_ss-641
+    type: ss
+    server: 13.53.198.63
+    port: 443
+    cipher: aes-256-cfb
+    password: amazonskr05
+    udp: true
+  - name: public_sub_ss-642
+    type: ss
+    server: 13.53.38.71
+    port: 443
+    cipher: aes-256-cfb
+    password: amazonskr05
+    udp: true
+  - name: public_sub_ss-644
+    type: ss
+    server: 13.62.231.217
+    port: 443
+    cipher: aes-256-cfb
+    password: amazonskr05
+    udp: true
+  - name: public_sub_ss-647
+    type: ss
+    server: 54.196.207.151
+    port: 443
+    cipher: aes-256-cfb
+    password: amazonskr05
+    udp: true
+  - name: public_sub_ss-645
+    type: ss
+    server: 16.171.111.98
+    port: 443
+    cipher: aes-256-cfb
+    password: amazonskr05
+    udp: true
+  - name: public_sub_ss-646
+    type: ss
+    server: 51.20.125.180
+    port: 443
+    cipher: aes-256-cfb
+    password: amazonskr05
+    udp: true
+  - name: public_sub_ss-649
+    type: ss
+    server: 54.226.30.144
+    port: 443
+    cipher: aes-256-cfb
+    password: amazonskr05
+    udp: true
+  - name: public_sub_ss-650
+    type: ss
+    server: 98.81.132.97
+    port: 443
+    cipher: aes-256-cfb
+    password: amazonskr05
+    udp: true
+  - name: public_sub_ss-652
+    type: ss
+    server: 195.58.48.19
+    port: 10910
+    cipher: aes-256-gcm
+    password: 2027e830399d8d08
+    udp: true
+  - name: public_sub_ss-661
+    type: ss
+    server: 185.196.61.82
+    port: 8080
+    cipher: aes-256-gcm
+    password: KixLvKzwjekG00rm
+    udp: true
+  - name: public_sub_ss-665
+    type: ss
+    server: 141.164.45.187
+    port: 7001
+    cipher: aes-256-gcm
+    password: RexnBgU7EV5ADxG
+    udp: true
+  - name: public_sub_ss-668
+    type: ss
+    server: 154.223.16.96
+    port: 6697
+    cipher: aes-256-gcm
+    password: TEzjfAYq2IjtuoS
+    udp: true
+  - name: public_sub_ss-679
+    type: ss
+    server: 38.180.113.194
+    port: 8119
+    cipher: aes-256-gcm
+    password: cdBIDV42DCwnfIN
+    udp: true
+  - name: public_sub_ss-690
+    type: ss
+    server: 82.40.63.32
+    port: 10808
+    cipher: chacha20-ietf-poly1305
+    password: YfvLHwqcmSCFDL4i6WD4Ky8C7VGQMWjX
+    udp: true
+  - name: public_sub_ss-697
+    type: ss
+    server: 68.168.222.210
+    port: 1234
+    cipher: chacha20-ietf-poly1305
+    password: zz0dHjDfoaSaZuRFLGH-hNfBALSEJUYD
+    udp: true
+  - name: public_sub_ss-693
+    type: ss
+    server: 82.38.31.204
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-696
+    type: ss
+    server: 92.112.126.90
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: wwzVn2ZnHfqYa6l8EWh3eY
+    udp: true
+  - name: public_sub_ss-699
+    type: ss
+    server: 92.112.126.90
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: RFK38Cg7APneSB5cWDcpbm
+    udp: true
+  - name: public_sub_ss-695
+    type: ss
+    server: 92.112.126.90
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: 9tqhMdIrTkgQ46PvhyAtMH
+    udp: true
+  - name: public_sub_ss-707
+    type: ss
+    server: 104.156.233.234
+    port: 27116
+    cipher: chacha20-ietf-poly1305
+    password: bIOoi5TuImG2KccxV7-jcA7Cez+vun-c_E
+    udp: true
+  - name: public_sub_ss-706
+    type: ss
+    server: 102.37.156.224
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: aduB9HGxQHjA2SBMRjkHX6
+    udp: true
+  - name: public_sub_ss-715
+    type: ss
+    server: 82.38.31.191
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-716
+    type: ss
+    server: 82.38.31.194
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-726
+    type: ss
+    server: 156.146.38.167
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: public_sub_ss-719
+    type: ss
+    server: 82.38.31.205
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-725
+    type: ss
+    server: 156.146.38.168
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: public_sub_ss-729
+    type: ss
+    server: 108.181.0.177
+    port: 8388
+    cipher: chacha20-ietf-poly1305
+    password: G5p6ww4o67HB
+    udp: true
+  - name: public_sub_ss-721
+    type: ss
+    server: 82.38.31.210
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-730
+    type: ss
+    server: 108.181.118.10
+    port: 8388
+    cipher: chacha20-ietf-poly1305
+    password: G5p6ww4o67HB
+    udp: true
+  - name: public_sub_ss-728
+    type: ss
+    server: 156.146.38.170
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: public_sub_ss-732
+    type: ss
+    server: 173.244.56.9
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: public_sub_ss-743
+    type: ss
+    server: 82.38.31.34
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-742
+    type: ss
+    server: 82.38.31.46
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-744
+    type: ss
+    server: 82.38.31.186
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-749
+    type: ss
+    server: 82.38.31.2
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-751
+    type: ss
+    server: 82.38.31.48
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-748
+    type: ss
+    server: 82.38.31.36
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-760
+    type: ss
+    server: 82.38.31.149
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-761
+    type: ss
+    server: 82.38.31.174
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-763
+    type: ss
+    server: 82.38.31.174
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-764
+    type: ss
+    server: 193.29.139.147
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-765
+    type: ss
+    server: 82.38.31.49
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-769
+    type: ss
+    server: 37.19.198.160
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: public_sub_ss-771
+    type: ss
+    server: 37.19.198.243
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: public_sub_ss-768
+    type: ss
+    server: 82.38.31.16
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-774
+    type: ss
+    server: 3.91.76.154
+    port: 443
+    cipher: aes-256-cfb
+    password: amazonskr05
+    udp: true
+  - name: public_sub_ss-776
+    type: ss
+    server: 109.201.152.181
+    port: 443
+    cipher: aes-128-cfb
+    password: shadowsocks
+    udp: true
+  - name: public_sub_ss-777
+    type: ss
+    server: 149.22.95.183
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: public_sub_ss-778
+    type: ss
+    server: 216.105.168.18
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: hCCWOcIsK5wrFz4OX70rWf
+    udp: true
+  - name: public_sub_ss-786
+    type: ss
+    server: 13.51.233.2
+    port: 443
+    cipher: aes-256-cfb
+    password: amazonskr05
+    udp: true
+  - name: public_sub_ss-792
+    type: ss
+    server: 102.133.165.160
+    port: 16233
+    cipher: chacha20-ietf-poly1305
+    password: Xsy8Ox4yOV3xLlpxtjzs3X
+    udp: true
+  - name: public_sub_ss-793
+    type: ss
+    server: 94.156.250.148
+    port: 7001
+    cipher: aes-256-gcm
+    password: RexnBgU7EV5ADxG
+    udp: true
+  - name: public_sub_ss-799
+    type: ss
+    server: 103.36.91.32
+    port: 8388
+    cipher: chacha20-ietf
+    password: asd123456
+    udp: true
+  - name: public_sub_ss-805
+    type: ss
+    server: 221.139.79.57
+    port: 13979
+    cipher: aes-256-cfb
+    password: "qwerREWQ@@"
+    udp: true
+  - name: public_sub_ss-807
+    type: ss
+    server: 218.237.185.230
+    port: 4652
+    cipher: aes-256-cfb
+    password: "qwerREWQ@@"
+    udp: true
+  - name: public_sub_ss-813
+    type: ss
+    server: 138.199.42.68
+    port: 8080
+    cipher: rc4-md5
+    password: 14fFPrbezE3HDZzsMOr6
+    udp: true
+  - name: public_sub_ss-809
+    type: ss
+    server: 211.178.105.134
+    port: 6123
+    cipher: aes-256-cfb
+    password: "qwerREWQ@@"
+    udp: true
+  - name: public_sub_ss-810
+    type: ss
+    server: switcher-nick-croquet.freesocks.work
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: 9tqhMdIrTkgQ46PvhyAtMH
+    udp: true
+  - name: public_sub_ss-814
+    type: ss
+    server: 146.70.61.37
+    port: 8080
+    cipher: rc4-md5
+    password: 14fFPrbezE3HDZzsMOr6
+    udp: true
+  - name: public_sub_ss-808
+    type: ss
+    server: p141.panda001.net
+    port: 4652
+    cipher: aes-256-cfb
+    password: "qwerREWQ@@"
+    udp: true
+  - name: public_sub_ss-870
+    type: ss
+    server: 137.184.174.93
+    port: 8080
+    cipher: rc4-md5
+    password: 14fFPrbezE3HDZzsMOr6
+    udp: true
+  - name: public_sub_ss-865
+    type: ss
+    server: 141.164.45.187
+    port: 6679
+    cipher: aes-256-gcm
+    password: TEzjfAYq2IjtuoS
+    udp: true
+  - name: public_sub_vmess-935
+    type: vmess
+    server: v10.hdacd.com
+    port: 30807
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-1137
+    type: vmess
+    server: u2frxj0g13vdi0wo.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: U2FRxj0G13vDI0Wo.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: U2FRxj0G13vDI0Wo.v.3dns.vip
+  - name: public_sub_vmess-1159
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-1162
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-1179
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-1229
+    type: vmess
+    server: v9.hdacd.com
+    port: 30809
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_trojan-1630
+    type: trojan
+    server: 185.18.250.252
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.calmlunch.com
+    network: ws
+    ws-opts:
+      path: /assignment
+      headers:
+        Host: www.calmlunch.com
+  - name: public_sub_trojan-1638
+    type: trojan
+    server: 212.183.88.136
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.calmlunch.com
+    network: ws
+    ws-opts:
+      path: /assignment
+      headers:
+        Host: www.calmlunch.com
+  - name: public_sub_trojan-1629
+    type: trojan
+    server: 185.18.250.245
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.calmlunch.com
+    network: ws
+    ws-opts:
+      path: /assignment
+      headers:
+        Host: www.calmlunch.com
+  - name: public_sub_trojan-1633
+    type: trojan
+    server: 198.62.62.23
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.calmlunch.com
+    network: ws
+    ws-opts:
+      path: //assignment
+      headers:
+        Host: www.calmlunch.com
+  - name: public_sub_trojan-1616
+    type: trojan
+    server: 104.17.121.43
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.calmlunch.com
+    network: ws
+    ws-opts:
+      path: /assignment
+      headers:
+        Host: www.calmlunch.com
+  - name: public_sub_trojan-1654
+    type: trojan
+    server: 104.18.16.56
+    port: 443
+    password: MiTiVPN
+    udp: true
+    sni: J--P-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
+    network: ws
+    ws-opts:
+      path: "/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/JP---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN"
+      headers:
+        Host: Jpn1-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
+  - name: public_sub_trojan-1655
+    type: trojan
+    server: 104.18.42.68
+    port: 443
+    password: MITIVPN
+    udp: true
+    sni: Ussa1-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
+    network: ws
+    ws-opts:
+      path: "/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/usa---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN"
+      headers:
+        Host: usa-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
+  - name: public_sub_trojan-1657
+    type: trojan
+    server: 104.20.39.109
+    port: 443
+    password: MiTiVPN
+    udp: true
+    sni: S-G-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
+    network: ws
+    ws-opts:
+      path: "/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/SG---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN"
+      headers:
+        Host: sg1-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
+  - name: public_sub_trojan-1656
+    type: trojan
+    server: 104.19.229.21
+    port: 443
+    password: MITIVPN
+    udp: true
+    sni: Ddee2-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
+    network: ws
+    ws-opts:
+      path: "/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/de2---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN"
+      headers:
+        Host: De2-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
+  - name: public_sub_trojan-1659
+    type: trojan
+    server: 104.26.12.41
+    port: 443
+    password: MiTiVPN
+    udp: true
+    sni: sws-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
+    network: ws
+    ws-opts:
+      path: "/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/sw---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN"
+      headers:
+        Host: ssssw-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
+  - name: public_sub_trojan-1658
+    type: trojan
+    server: 104.21.18.41
+    port: 443
+    password: MiTiVPN
+    udp: true
+    sni: Gb21-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
+    network: ws
+    ws-opts:
+      path: "/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/gb---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN"
+      headers:
+        Host: gbs-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
+  - name: public_sub_trojan-1661
+    type: trojan
+    server: 172.66.40.99
+    port: 443
+    password: MiTiVPN
+    udp: true
+    sni: Flll-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
+    network: ws
+    ws-opts:
+      path: "/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/fl---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN"
+      headers:
+        Host: Fls1-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
+  - name: public_sub_trojan-1660
+    type: trojan
+    server: 172.64.146.59
+    port: 443
+    password: MiTiVPN
+    udp: true
+    sni: hk1-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
+    network: ws
+    ws-opts:
+      path: "/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/HK---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN"
+      headers:
+        Host: H-k-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
+  - name: public_sub_vmess-2970
+    type: vmess
+    server: 104.17.77.77
+    port: 8443
+    uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: v2ray1.dozapp.xyz
+    network: ws
+    ws-opts:
+      path: /lMnsZUN4/
+      headers:
+        Host: v2ray1.dozapp.xyz
+  - name: public_sub_vmess-3078
+    type: vmess
+    server: 107.172.75.141
+    port: 10086
+    uuid: e02c67a8-d769-4d73-833a-ab6acdb86e6e
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3053
+    type: vmess
+    server: 104.21.57.84
+    port: 8443
+    uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: v2ray1.dozapp.xyz
+    network: ws
+    ws-opts:
+      path: /lMnsZUN4/
+      headers:
+        Host: v2ray1.dozapp.xyz
+  - name: public_sub_vmess-3101
+    type: vmess
+    server: 129.146.143.80
+    port: 48111
+    uuid: d4603cc2-e0ee-4651-83f5-1db5b7168177
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3103
+    type: vmess
+    server: 129.146.77.248
+    port: 39495
+    uuid: f836c736-87fc-4fde-aabc-00857ecdff3e
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /cctv13.m3u8
+      headers:
+        Host: 129.146.77.248
+  - name: public_sub_vmess-3110
+    type: vmess
+    server: 134.195.196.211
+    port: 18000
+    uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3107
+    type: vmess
+    server: 132.145.80.230
+    port: 80
+    uuid: 5155860e-d07d-46c3-9128-3afbd84626c7
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /cctv13.m3u8
+      headers:
+        Host: 132.145.80.230
+  - name: public_sub_vmess-3116
+    type: vmess
+    server: 140.83.51.161
+    port: 25686
+    uuid: 6733c357-ba11-4e9f-f00f-7d87f2776ff9
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /cctv13.m3u8
+      headers:
+        Host: 140.83.51.161
+  - name: public_sub_vmess-3124
+    type: vmess
+    server: 149.88.23.202
+    port: 18000
+    uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3114
+    type: vmess
+    server: 140.238.2.250
+    port: 443
+    uuid: 41a7089a-040b-4538-8b8d-010902405bde
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3125
+    type: vmess
+    server: 149.88.23.207
+    port: 18000
+    uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3156
+    type: vmess
+    server: 165.140.216.142
+    port: 443
+    uuid: b65a2d69-5634-42a2-e4be-54e8a6176900
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3158
+    type: vmess
+    server: 165.154.195.38
+    port: 35034
+    uuid: 959a8caf-4cea-43d0-a548-3628e7ddfafc
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3122
+    type: vmess
+    server: 146.56.112.110
+    port: 8888
+    uuid: e7c302f3-90d6-42dd-9d7d-94a3683a3707
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3161
+    type: vmess
+    server: 168.138.43.75
+    port: 80
+    uuid: 11c3627f-31e8-4695-dfbd-34076e2f1f5d
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /cctv13.m3u8
+      headers:
+        Host: 168.138.43.75
+  - name: public_sub_vmess-3164
+    type: vmess
+    server: 169.197.142.22
+    port: 18000
+    uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3252
+    type: vmess
+    server: 216.106.183.35
+    port: 22324
+    uuid: 04621bae-ab36-11ec-b909-0242ac120002
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3240
+    type: vmess
+    server: 195.133.193.18
+    port: 27726
+    uuid: 98e2be3c-8f84-4b85-996b-b68dcc2fbcb6
+    alterId: 0
+    cipher: chacha20-poly1305
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3257
+    type: vmess
+    server: 23.162.200.198
+    port: 18000
+    uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3274
+    type: vmess
+    server: 38.110.1.246
+    port: 18000
+    uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3279
+    type: vmess
+    server: 38.91.107.49
+    port: 18000
+    uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3273
+    type: vmess
+    server: 38.107.234.57
+    port: 80
+    uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /vmess/
+      headers:
+        Host: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
+  - name: public_sub_vmess-3285
+    type: vmess
+    server: 43.198.204.35
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: cE0gedPXwOU6cqoN.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: cE0gedPXwOU6cqoN.v.3dns.vip
+  - name: public_sub_vmess-3265
+    type: vmess
+    server: 2b9hwy8ocx7q74nm.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: 2b9hwy8ocx7q74nm.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: 2b9hwy8ocx7q74nm.v.3dns.vip
+  - name: public_sub_vmess-3301
+    type: vmess
+    server: 47.244.120.197
+    port: 44867
+    uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /arki
+      headers:
+        Host: 47.244.120.197
+  - name: public_sub_vmess-3305
+    type: vmess
+    server: 47.250.45.234
+    port: 8613
+    uuid: 80039b4d-bac0-4f89-82c7-54fad3b0a1ea
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /arki
+      headers:
+        Host: 47.250.45.234
+  - name: public_sub_vmess-3309
+    type: vmess
+    server: 47.76.197.72
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: m01c7b2z26dtqgee.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: m01c7b2z26dtqgee.v.3dns.vip
+  - name: public_sub_vmess-3313
+    type: vmess
+    server: 47.83.198.38
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: wwafj5LHl6bI8aU9.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: wwafj5LHl6bI8aU9.v.3dns.vip
+  - name: public_sub_vmess-3315
+    type: vmess
+    server: 47.83.207.148
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: VAH4URdZL3jDX5r2.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: VAH4URdZL3jDX5r2.v.3dns.vip
+  - name: public_sub_vmess-3297
+    type: vmess
+    server: 47.242.79.198
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: ejOMsxPtP19APyGL.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: ejOMsxPtP19APyGL.v.3dns.vip
+  - name: public_sub_vmess-3312
+    type: vmess
+    server: 47.83.19.148
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: 6JDvArazgU3qQR6Q.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: 6JDvArazgU3qQR6Q.v.3dns.vip
+  - name: public_sub_vmess-3317
+    type: vmess
+    server: 47.86.107.119
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: lcv8v9l7OyamxxfZ.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: lcv8v9l7OyamxxfZ.v.3dns.vip
+  - name: public_sub_vmess-3347
+    type: vmess
+    server: 67.220.85.46
+    port: 18000
+    uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3346
+    type: vmess
+    server: 67.220.72.237
+    port: 22324
+    uuid: 04621bae-ab36-11ec-b909-0242ac120002
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3344
+    type: vmess
+    server: 66.163.117.58
+    port: 22324
+    uuid: 04621bae-ab36-11ec-b909-0242ac120002
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3353
+    type: vmess
+    server: 69.63.204.31
+    port: 2082
+    uuid: 542bd1db-f5e7-4c81-a08a-d95da62a914b
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: 542bd1db-f5e7-4c81-a08a-d95da62a914b-vm
+      headers:
+        Host: 69.63.204.31
+  - name: public_sub_vmess-3341
+    type: vmess
+    server: 64.186.253.113
+    port: 2095
+    uuid: 3df54c90-5cc4-4a70-98f7-52245f25230b
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: 3df54c90-5cc4-4a70-98f7-52245f25230b-vm
+      headers:
+        Host: 64.186.253.113
+  - name: public_sub_vmess-3358
+    type: vmess
+    server: 6jdvarazgu3qqr6q.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: 6JDvArazgU3qQR6Q.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: 6JDvArazgU3qQR6Q.v.3dns.vip
+  - name: public_sub_vmess-3350
+    type: vmess
+    server: 67.220.95.3
+    port: 18000
+    uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3365
+    type: vmess
+    server: 7timuei1uufoixbf.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: 7tImuei1uuFOiXbf.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: 7tImuei1uuFOiXbf.v.3dns.vip
+  - name: public_sub_vmess-3368
+    type: vmess
+    server: 8.210.189.158
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: 2b9hwy8ocx7q74nm.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: 2b9hwy8ocx7q74nm.v.3dns.vip
+  - name: public_sub_vmess-3393
+    type: vmess
+    server: 84.17.41.2
+    port: 18000
+    uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3409
+    type: vmess
+    server: apjhdggyx.com
+    port: 443
+    uuid: 5f72f180-b21b-4b7a-8484-240759012604
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: apjhdggyx.com
+    network: ws
+    ws-opts:
+      path: /5f72f180-b21b-4b7a-8484-240759096785
+      headers:
+        Host: apjhdggyx.com
+  - name: public_sub_vmess-3399
+    type: vmess
+    server: 93ucrn4i0pffuabk.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: 93ucrn4i0PffUAbk.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: 93ucrn4i0PffUAbk.v.3dns.vip
+  - name: public_sub_vmess-3397
+    type: vmess
+    server: 89.34.230.135
+    port: 51185
+    uuid: af6b6c9b-62bc-46c2-9147-81ec34885899
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3396
+    type: vmess
+    server: 89.34.230.135
+    port: 11361
+    uuid: af6b6c9b-62bc-46c2-9147-81ec34885899
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /y83qykm0zm
+      headers:
+        Host: 89.34.230.135
+  - name: public_sub_vmess-3473
+    type: vmess
+    server: drbkg16egf3fzlm3.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: DrBKg16eGf3FZlM3.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: DrBKg16eGf3FZlM3.v.3dns.vip
+  - name: public_sub_vmess-3485
+    type: vmess
+    server: fj260203.freechatup.com
+    port: 27726
+    uuid: 98e2be3c-8f84-4b85-996b-b68dcc2fbcb6
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3487
+    type: vmess
+    server: fj260204.freechatup.com
+    port: 27726
+    uuid: 98e2be3c-8f84-4b85-996b-b68dcc2fbcb6
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3488
+    type: vmess
+    server: fj260205.freechatup.com
+    port: 27726
+    uuid: 98e2be3c-8f84-4b85-996b-b68dcc2fbcb6
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3489
+    type: vmess
+    server: fj260304.freechatup.com
+    port: 27726
+    uuid: 98e2be3c-8f84-4b85-996b-b68dcc2fbcb6
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3491
+    type: vmess
+    server: fj260306.freechatup.com
+    port: 27726
+    uuid: 98e2be3c-8f84-4b85-996b-b68dcc2fbcb6
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3494
+    type: vmess
+    server: fj260404.freechatup.com
+    port: 27726
+    uuid: 98e2be3c-8f84-4b85-996b-b68dcc2fbcb6
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3492
+    type: vmess
+    server: fj260403.freechatup.com
+    port: 27726
+    uuid: 98e2be3c-8f84-4b85-996b-b68dcc2fbcb6
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3490
+    type: vmess
+    server: fj260305.freechatup.com
+    port: 27726
+    uuid: 98e2be3c-8f84-4b85-996b-b68dcc2fbcb6
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3479
+    type: vmess
+    server: ejomsxptp19apygl.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: ejOMsxPtP19APyGL.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: ejOMsxPtP19APyGL.v.3dns.vip
+  - name: public_sub_vmess-3480
+    type: vmess
+    server: ex1ogt73nzpqkac2.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: EX1oGt73NzPQKAc2.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: EX1oGt73NzPQKAc2.v.3dns.vip
+  - name: public_sub_vmess-3534
+    type: vmess
+    server: lcv8v9l7oyamxxfz.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: lcv8v9l7OyamxxfZ.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: lcv8v9l7OyamxxfZ.v.3dns.vip
+  - name: public_sub_vmess-3539
+    type: vmess
+    server: m01c7b2z26dtqgee.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: M01c7B2z26DtQGEe.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: M01c7B2z26DtQGEe.v.3dns.vip
+  - name: public_sub_vmess-3515
+    type: vmess
+    server: i2psm3knof5qjjix.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: I2PSm3Knof5qjjix.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: I2PSm3Knof5qjjix.v.3dns.vip
+  - name: public_sub_vmess-3544
+    type: vmess
+    server: mh7r5ardl0z5jtgy.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: mh7r5ardl0z5jtgy.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: mh7r5ardl0z5jtgy.v.3dns.vip
+  - name: public_sub_vmess-3552
+    type: vmess
+    server: mtckundigepwu3up.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: mTCKUNDiGePwU3uP.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: mTCKUNDiGePwU3uP.v.3dns.vip
+  - name: public_sub_vmess-3570
+    type: vmess
+    server: qtkdr8jxe3wefxjm.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: qTKDR8jXE3wEFxJM.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: qTKDR8jXE3wEFxJM.v.3dns.vip
+  - name: public_sub_vmess-3562
+    type: vmess
+    server: nycqg19zkwacpm1b.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: NYcQg19zkwaCPM1B.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: NYcQg19zkwaCPM1B.v.3dns.vip
+  - name: public_sub_vmess-3611
+    type: vmess
+    server: v24.hdacd.com
+    port: 30824
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-3618
+    type: vmess
+    server: vah4urdzl3jdx5r2.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: vah4urdzl3jdx5r2.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: vah4urdzl3jdx5r2.v.3dns.vip
+  - name: public_sub_vmess-3631
+    type: vmess
+    server: wwafj5lhl6bi8au9.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: wwafj5lhl6bi8au9.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: wwafj5lhl6bi8au9.v.3dns.vip
+  - name: public_sub_vmess-3673
+    type: vmess
+    server: zudssgtmrqg9lpvi.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: zUDssgTMRqg9LpvI.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: zUDssgTMRqg9LpvI.v.3dns.vip
+  - name: public_sub_ss-7991
+    type: ss
+    server: 193.29.139.223
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-8009
+    type: ss
+    server: 82.38.31.189
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-8061
+    type: ss
+    server: 82.38.31.217
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-8138
+    type: ss
+    server: 141.98.101.182
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: public_sub_trojan-8303
+    type: trojan
+    server: 77.74.123.132
+    port: 449
+    password: Oz_Kx9342gefwJ89x3_M9z32kzf9KJq003_s
+    udp: true
+    sni: grape-zet-turbo-nl.yyuyy.com
+  - name: public_sub_vmess-9962
+    type: vmess
+    server: cindy50.ceoiii.com
+    port: 36801
+    uuid: a6ab6513-6ec3-327f-a068-b89fe72954b8
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /hls/cctv5phd.m3u8
+      headers:
+        Host: ajax.microsoft.com
+  - name: public_sub_ss-11138
+    type: ss
+    server: 185.213.23.63
+    port: 990
+    cipher: chacha20-ietf-poly1305
+    password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+    udp: true
+  - name: public_sub_ss-11253
+    type: ss
+    server: 16.171.242.243
+    port: 443
+    cipher: aes-256-cfb
+    password: amazonskr05
+    udp: true
+  - name: public_sub_ss-11283
+    type: ss
+    server: 82.38.31.184
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_vmess-15439
+    type: vmess
+    server: 143.110.145.0
+    port: 1233
+    uuid: 9b6419f8-8120-442e-a48c-6bf52aef0abf
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: p05.rghvf.sbs
+    network: tcp
+  - name: public_sub_ss-15644
+    type: ss
+    server: 172.245.235.84
+    port: 2375
+    cipher: aes-256-gcm
+    password: faBAoD54k87UJG7
+    udp: true
+  - name: public_sub_ss-15646
+    type: ss
+    server: 108.181.57.93
+    port: 8388
+    cipher: chacha20-ietf-poly1305
+    password: RSo52SbxW40r
+    udp: true
+  - name: public_sub_ss-15664
+    type: ss
+    server: 61.231.49.125
+    port: 50099
+    cipher: chacha20-ietf-poly1305
+    password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
+    udp: true
+  - name: public_sub_ss-15671
+    type: ss
+    server: 61.231.30.84
+    port: 50099
+    cipher: chacha20-ietf-poly1305
+    password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
+    udp: true
+  - name: public_sub_ss-15673
+    type: ss
+    server: 61.231.49.125
+    port: 50099
+    cipher: chacha20-ietf-poly1305
+    password: b1ae0fce-9340-4f2e-882d-fdb2218e2e2b
+    udp: true
+  - name: public_sub_ss-15680
+    type: ss
+    server: 82.38.31.193
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-15672
+    type: ss
+    server: r3mrcg001287h3p.cybervena.com
+    port: 50099
+    cipher: chacha20-ietf-poly1305
+    password: b1ae0fce-9340-4f2e-882d-fdb2218e2e2b
+    udp: true
+  - name: public_sub_ss-15687
+    type: ss
+    server: 82.38.31.39
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-15697
+    type: ss
+    server: r3mrcg00129437x.cybervena.com
+    port: 50099
+    cipher: chacha20-ietf-poly1305
+    password: b1ae0fce-9340-4f2e-882d-fdb2218e2e2b
+    udp: true
+  - name: public_sub_ss-15703
+    type: ss
+    server: 82.38.31.200
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-15709
+    type: ss
+    server: 13.62.20.75
+    port: 443
+    cipher: aes-256-cfb
+    password: amazonskr05
+    udp: true
+  - name: public_sub_ss-15713
+    type: ss
+    server: 82.38.31.32
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-15718
+    type: ss
+    server: 82.38.31.198
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-15724
+    type: ss
+    server: 193.29.139.198
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-15732
+    type: ss
+    server: 64.31.63.244
+    port: 8881
+    cipher: aes-256-gcm
+    password: kDWvXYZoTBcGkC4
+    udp: true
+  - name: public_sub_ss-15736
+    type: ss
+    server: 108.181.121.226
+    port: 8388
+    cipher: chacha20-ietf-poly1305
+    password: WSyL4XTwNsdv
+    udp: true
+  - name: public_sub_ss-15728
+    type: ss
+    server: 103.106.231.82
+    port: 5600
+    cipher: aes-256-gcm
+    password: Y6R9pAtvxxzmGC
+    udp: true
+  - name: public_sub_ss-15739
+    type: ss
+    server: 82.38.31.156
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-15740
+    type: ss
+    server: 13.62.53.26
+    port: 443
+    cipher: aes-256-cfb
+    password: amazonskr05
+    udp: true
+  - name: public_sub_ss-15743
+    type: ss
+    server: 167.150.100.115
+    port: 27755
+    cipher: 2022-blake3-aes-256-gcm
+    password: fnvo82p9y4AKykZXyIFtnodFy6fQmWnVlI2SvGleOB0=
+    udp: true
+  - name: public_sub_ss-15741
+    type: ss
+    server: 185.226.172.8
+    port: 8008
+    cipher: aes-256-gcm
+    password: XKFKl2rULjIp74
+    udp: true
+  - name: public_sub_ss-15750
+    type: ss
+    server: 82.38.31.3
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-15749
+    type: ss
+    server: 141.164.45.187
+    port: 8119
+    cipher: aes-256-gcm
+    password: cdBIDV42DCwnfIN
+    udp: true
+  - name: public_sub_ss-15751
+    type: ss
+    server: 130.49.189.158
+    port: 10792
+    cipher: chacha20-ietf-poly1305
+    password: CsSYOhlDUy7Hz1yQCXSnxj
+    udp: true
+  - name: public_sub_ss-15747
+    type: ss
+    server: 141.164.45.187
+    port: 8008
+    cipher: aes-256-gcm
+    password: XKFKl2rULjIp74
+    udp: true
+  - name: public_sub_ss-15752
+    type: ss
+    server: 92.118.205.211
+    port: 5600
+    cipher: aes-256-gcm
+    password: Y6R9pAtvxxzmGC
+    udp: true
+  - name: public_sub_ss-15762
+    type: ss
+    server: 185.213.20.110
+    port: 7001
+    cipher: aes-256-gcm
+    password: RexnBgU7EV5ADxG
+    udp: true
+  - name: public_sub_ss-15726
+    type: ss
+    server: 82.38.31.36
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-15770
+    type: ss
+    server: 31.76.80.205
+    port: 8388
+    cipher: chacha20-ietf-poly1305
+    password: cAqbBYBB0f9CAmpU_mc_7FyvvLCcwzt0
+    udp: true
+  - name: public_sub_ss-15768
+    type: ss
+    server: 38.244.132.14
+    port: 5499
+    cipher: aes-256-gcm
+    password: lGqs95QkFHo2NV
+    udp: true
+  - name: public_sub_ss-15769
+    type: ss
+    server: 154.90.32.5
+    port: 5601
+    cipher: aes-256-gcm
+    password: Y6R9pAtvxxzmGC
+    udp: true
+  - name: public_sub_ss-15765
+    type: ss
+    server: 141.164.45.187
+    port: 6697
+    cipher: aes-256-gcm
+    password: TEzjfAYq2IjtuoS
+    udp: true
+  - name: public_sub_ss-15774
+    type: ss
+    server: 38.54.93.66
+    port: 49692
+    cipher: rc4-md5
+    password: ad80f76711ec7213
+    udp: true
+  - name: public_sub_ss-15779
+    type: ss
+    server: 82.38.31.13
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-15787
+    type: ss
+    server: 141.164.45.187
+    port: 5498
+    cipher: aes-256-gcm
+    password: lGqs95QkFHo2NV
+    udp: true
+  - name: public_sub_ss-15759
+    type: ss
+    server: bogging-eyeteeth-fly.freesocks.work
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: QFWzCw2uX9B9i6qAYeFBIE
+    udp: true
+  - name: public_sub_ss-15760
+    type: ss
+    server: 141.164.45.187
+    port: 7002
+    cipher: aes-256-gcm
+    password: RexnBgU7EV5ADxG
+    udp: true
+  - name: public_sub_ss-15777
+    type: ss
+    server: 82.38.31.17
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-15793
+    type: ss
+    server: 141.164.45.187
+    port: 9090
+    cipher: aes-256-gcm
+    password: Y6R9pAtvxxzmGC
+    udp: true
+  - name: public_sub_ss-15761
+    type: ss
+    server: 154.46.31.106
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: QFWzCw2uX9B9i6qAYeFBIE
+    udp: true
+  - name: public_sub_ss-15792
+    type: ss
+    server: 82.38.31.18
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-15808
+    type: ss
+    server: 193.29.139.132
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-15803
+    type: ss
+    server: 141.164.45.187
+    port: 5001
+    cipher: aes-256-gcm
+    password: Y6R9pAtvxxzmGC
+    udp: true
+  - name: public_sub_ss-15814
+    type: ss
+    server: 38.180.135.39
+    port: 8316
+    cipher: chacha20-ietf-poly1305
+    password: ljqdalu13..
+    udp: true
+  - name: public_sub_ss-15796
+    type: ss
+    server: 213.202.208.199
+    port: 7001
+    cipher: aes-256-gcm
+    password: RexnBgU7EV5ADxG
+    udp: true
+  - name: public_sub_ss-15809
+    type: ss
+    server: 141.164.45.187
+    port: 8000
+    cipher: aes-256-gcm
+    password: KixLvKzwjekG00rm
+    udp: true
+  - name: public_sub_ss-15794
+    type: ss
+    server: switcher-nick-croquet.freesocks.work
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: wwzVn2ZnHfqYa6l8EWh3eY
+    udp: true
+  - name: public_sub_ss-15815
+    type: ss
+    server: 185.123.101.64
+    port: 2376
+    cipher: aes-256-gcm
+    password: faBAoD54k87UJG7
+    udp: true
+  - name: public_sub_ss-15813
+    type: ss
+    server: 103.106.229.69
+    port: 9090
+    cipher: aes-256-gcm
+    password: Y6R9pAtvxxzmGC
+    udp: true
+  - name: public_sub_ss-15826
+    type: ss
+    server: 141.164.45.187
+    port: 2376
+    cipher: aes-256-gcm
+    password: faBAoD54k87UJG7
+    udp: true
+  - name: public_sub_ss-15822
+    type: ss
+    server: 38.180.135.39
+    port: 8313
+    cipher: chacha20-ietf-poly1305
+    password: ljqdalu13..
+    udp: true
+  - name: public_sub_ss-15817
+    type: ss
+    server: 172.105.39.124
+    port: 7002
+    cipher: aes-256-gcm
+    password: RexnBgU7EV5ADxG
+    udp: true
+  - name: public_sub_ss-15812
+    type: ss
+    server: 141.164.45.187
+    port: 9101
+    cipher: aes-256-gcm
+    password: e4FCWrgpkji3QY
+    udp: true
+  - name: public_sub_ss-15829
+    type: ss
+    server: 38.54.9.181
+    port: 3306
+    cipher: aes-256-gcm
+    password: Y6R9pAtvxxzmGC
+    udp: true
+  - name: public_sub_ss-15832
+    type: ss
+    server: 141.164.45.187
+    port: 8888
+    cipher: aes-256-gcm
+    password: Y6R9pAtvxxzmGC
+    udp: true
+  - name: public_sub_ss-15836
+    type: ss
+    server: 141.164.45.187
+    port: 8091
+    cipher: aes-256-gcm
+    password: PCnnH6SQSnfoS27
+    udp: true
+  - name: public_sub_trojan-15852
+    type: trojan
+    server: 153.75.250.171
+    port: 49271
+    password: 9ad83f65a560960e6509b677eb6162c1
+    udp: true
+    sni: 153.75.250.171.sslip.io
+  - name: public_sub_ss-15799
+    type: ss
+    server: 82.38.31.182
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_trojan-15944
+    type: trojan
+    server: 149.104.104.58
+    port: 443
+    password: S.ibYdZshHTF-ne.M+.Fznp_-hyFFnCSix
+    udp: true
+    sni: 149.104.104.58
+  - name: public_sub_trojan-15972
+    type: trojan
+    server: 157.254.38.210
+    port: 20004
+    password: ba07a8af-5544-48ac-ab62-3b6c00a44fa6
+    udp: true
+    sni: hk.catxstar.com
+  - name: public_sub_trojan-17898
+    type: trojan
+    server: 104.16.71.213
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.calmlunch.com
+    network: ws
+    ws-opts:
+      path: /assignment
+      headers:
+        Host: www.calmlunch.com
+  - name: public_sub_trojan-17902
+    type: trojan
+    server: 104.17.121.9
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.calmlunch.com
+    network: ws
+    ws-opts:
+      path: /assignment
+      headers:
+        Host: www.calmlunch.com
+  - name: public_sub_trojan-17925
+    type: trojan
+    server: 45.130.125.126
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.calmlunch.com
+    network: ws
+    ws-opts:
+      path: /assignment
+      headers:
+        Host: www.calmlunch.com
+  - name: public_sub_trojan-17928
+    type: trojan
+    server: 45.130.125.75
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.calmlunch.com
+    network: ws
+    ws-opts:
+      path: /assignment
+      headers:
+        Host: www.calmlunch.com
+  - name: public_sub_trojan-17929
+    type: trojan
+    server: 45.130.125.76
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.calmlunch.com
+    network: ws
+    ws-opts:
+      path: /assignment
+      headers:
+        Host: www.calmlunch.com
+  - name: public_sub_trojan-17932
+    type: trojan
+    server: www.calmlunch.com
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.calmlunch.com
+    network: ws
+    ws-opts:
+      path: /assignment
+      headers:
+        Host: www.calmlunch.com
+  - name: public_sub_trojan-17908
+    type: trojan
+    server: 104.19.64.105
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.calmlunch.com
+    network: ws
+    ws-opts:
+      path: /assignment
+      headers:
+        Host: www.calmlunch.com
+  - name: public_sub_ss-18824
+    type: ss
+    server: 158.173.24.73
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: public_sub_ss-18848
+    type: ss
+    server: 100.59.198.171
+    port: 443
+    cipher: aes-256-cfb
+    password: amazonskr05
+    udp: true
+  - name: public_sub_ss-20592
+    type: ss
+    server: 62.113.194.49
+    port: 1080
+    cipher: chacha20-ietf-poly1305
+    password: XF0klw7870vXn3uQIxe19Q
+    udp: true
+  - name: public_sub_ss-20608
+    type: ss
+    server: 129.148.49.241
+    port: 59319
+    cipher: chacha20-ietf-poly1305
+    password: YjliYmFlNzVmMmE4ZmJkYjAxNzQ2NWUyNzZlNjhkZGU=
+    udp: true
+  - name: public_sub_vmess-20698
+    type: vmess
+    server: 5.188.190.252
+    port: 22324
+    uuid: 04621bae-ab36-11ec-b909-0242ac120002
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-20736
+    type: vmess
+    server: 61.245.11.60
+    port: 80
+    uuid: a3e3a710-79f8-4ae0-b83c-607aab40d197
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /vmess/
+      headers:
+        Host: 61.245.11.60
+  - name: public_sub_trojan-21051
+    type: trojan
+    server: 104.16.98.215
+    port: 443
+    password: 521314
+    udp: true
+    sni: tjplay.lxdxo.kdns.fr
+    network: ws
+    ws-opts:
+      path: Telegram🇨🇳
+      headers:
+        Host: tjplay.lxdxo.kdns.fr
+  - name: public_sub_trojan-21054
+    type: trojan
+    server: 172.67.149.60
+    port: 443
+    password: 521314
+    udp: true
+    sni: tjplay.lxdxo.kdns.fr
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: tjplay.lxdxo.kdns.fr
+  - name: public_sub_trojan-21057
+    type: trojan
+    server: 45.67.215.9
+    port: 443
+    password: 521314
+    udp: true
+    sni: tjplay.lxdxo.kdns.fr
+    network: ws
+    ws-opts:
+      path: "/Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: tjplay.lxdxo.kdns.fr
+  - name: public_sub_trojan-21579
+    type: trojan
+    server: 104.21.40.208
+    port: 443
+    password: MiTiVPN
+    udp: true
+    sni: dde1-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
+    network: ws
+    ws-opts:
+      path: "/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/de---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN"
+      headers:
+        Host: De1-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
+  - name: public_sub_trojan-22111
+    type: trojan
+    server: 104.19.229.21
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.calmlunch.com
+    network: ws
+    ws-opts:
+      path: /assignment
+      headers:
+        Host: www.calmlunch.com
+  - name: public_sub_trojan-22132
+    type: trojan
+    server: 165.215.250.14
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.calmlunch.com
+    network: ws
+    ws-opts:
+      path: /assignment
+      headers:
+        Host: www.calmlunch.com
+  - name: public_sub_trojan-22135
+    type: trojan
+    server: 172.64.152.23
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.calmlunch.com
+    network: ws
+    ws-opts:
+      path: /assignment
+      headers:
+        Host: www.calmlunch.com
+  - name: public_sub_vmess-24477
+    type: vmess
+    server: ce0gedpxwou6cqon.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: cE0gedPXwOU6cqoN.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: cE0gedPXwOU6cqoN.v.3dns.vip
+  - name: public_sub_ss-28259
+    type: ss
+    server: 156.244.8.155
+    port: 5004
+    cipher: aes-256-gcm
+    password: g5MeD6Ft3CWlJId
+    udp: true
+  - name: public_sub_ss-28378
+    type: ss
+    server: 103.149.182.105
+    port: 8388
+    cipher: chacha20-ietf
+    password: asd123456
+    udp: true
+  - name: public_sub_ss-267
+    type: ss
+    server: 108.181.126.122
+    port: 8388
+    cipher: chacha20-ietf-poly1305
+    password: CJmTCCx7Ltud
+    udp: true
+  - name: public_sub_ss-281
+    type: ss
+    server: 193.29.139.168
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: QCXDxuDlTTMD7jtgHUjIoj
+    udp: true
+  - name: public_sub_ss-283
+    type: ss
+    server: 45.77.232.213
+    port: 15675
+    cipher: chacha20-ietf-poly1305
+    password: TWG7J1KR5KsPaV5qZI+rieueKxxafZSpCH
+    udp: true
+  - name: public_sub_ss-285
+    type: ss
+    server: 31.76.30.79
+    port: 10808
+    cipher: chacha20-ietf-poly1305
+    password: TmXSpcRBbhvHDg66bo2w89bToxQsbMoa
+    udp: true
+  - name: public_sub_ss-286
+    type: ss
+    server: 31.76.80.205
+    port: 8388
+    cipher: chacha20-ietf-poly1305
+    password: UZQY9hNjVNWwamajrXAf1vt8u63nj0fF
+    udp: true
+  - name: public_sub_ss-287
+    type: ss
+    server: 213.109.147.242
+    port: 62685
+    cipher: chacha20-ietf-poly1305
+    password: VpKABcOpNNA0l5G2AVOmw8
+    udp: true
+  - name: public_sub_ss-120
+    type: ss
+    server: 82.38.31.203
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-121
+    type: ss
+    server: 82.38.31.155
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: public_sub_ss-122
+    type: ss
+    server: 141.98.101.179
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: public_sub_ss-123
+    type: ss
+    server: 82.38.31.176
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: public_sub_ss-136
+    type: ss
+    server: r3mrcg001286ek2.cybervena.com
+    port: 50099
+    cipher: chacha20-ietf-poly1305
+    password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
+    udp: true
+  - name: public_sub_ss-137
+    type: ss
+    server: r3mrcg00129437x.cybervena.com
+    port: 50099
+    cipher: chacha20-ietf-poly1305
+    password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
+    udp: true
+  - name: public_sub_ss-141
+    type: ss
+    server: 209.46.102.22
+    port: 8388
+    cipher: chacha20-ietf-poly1305
+    password: 1hhrqrokj3ag
+    udp: true
+  - name: public_sub_ss-144
+    type: ss
+    server: 3.75.179.86
+    port: 494
+    cipher: chacha20-ietf-poly1305
+    password: 261bd0f2023c4c848dfc5356e31a99fe
+    udp: true
+  - name: public_sub_ss-162
+    type: ss
+    server: 57.129.121.230
+    port: 10443
+    cipher: chacha20-ietf-poly1305
+    password: uROuEqsL8IUMMVb4wDwnGU
+    udp: true
+  - name: public_sub_ss-168
+    type: ss
+    server: 108.181.58.239
+    port: 8388
+    cipher: chacha20-ietf-poly1305
+    password: CJmTCCx7Ltud
+    udp: true
+  - name: public_sub_ss-169
+    type: ss
+    server: 70.39.198.35
+    port: 54166
+    cipher: chacha20-ietf-poly1305
+    password: EvLfWGe0AKvK
+    udp: true
+  - name: public_sub_trojan-171
+    type: trojan
+    server: jumao91.shop
+    port: 2096
+    password: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
+    udp: true
+    sni: jumao91.shop
+    network: ws
+    ws-opts:
+      path: /proxyip=45.207.156.255
+      headers:
+        Host: jumao91.shop
+  - name: public_sub_trojan-172
+    type: trojan
+    server: 104.248.161.136
+    port: 443
+    password: 521314
+    udp: true
+    sni: tjplay.lxdxo.kdns.fr
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: tjplay.lxdxo.kdns.fr
+  - name: public_sub_trojan-173
+    type: trojan
+    server: millionaire.levikogjgfdd.ir
+    port: 443
+    password: 521314
+    udp: true
+    sni: tjplay.lxdxo.kdns.fr
+    network: ws
+    ws-opts:
+      path: /Leviko_v2ray
+      headers:
+        Host: tjplay.lxdxo.kdns.fr
+  - name: public_sub_trojan-175
+    type: trojan
+    server: 154.64.226.149
+    port: 9450
+    password: ba07a8af-5544-48ac-ab62-3b6c00a44fa6
+    udp: true
+    sni: hk.catxstar.com
+  - name: public_sub_trojan-176
+    type: trojan
+    server: 163.245.196.68
+    port: 49361
+    password: 0ebb269c9f2d4e8e46b0cd4105a55134
+    udp: true
+    sni: 163.245.196.68.sslip.io
+  - name: public_sub_trojan-177
+    type: trojan
+    server: 18.163.180.201
+    port: 6357
+    password: d1960ba9f0f6353353994fa844cf817b
+    udp: true
+    sni: www.nintendogames.net
+  - name: public_sub_vmess-255
+    type: vmess
+    server: 165.140.216.141
+    port: 443
+    uuid: e7d72a8d-26f2-4b54-b366-0c43e0bcba7d
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-256
+    type: vmess
+    server: 82.198.246.233
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-257
+    type: vmess
+    server: 216.106.185.141
+    port: 22324
+    uuid: 04621bae-ab36-11ec-b909-0242ac120002
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: public_sub_vmess-260
+    type: vmess
+    server: 45.76.202.45
+    port: 4010
+    uuid: 071a8a71-c656-4fb6-a908-4e42eb72243d
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /liksuzcp
+      headers:
+        Host: 45.76.202.45
+  - name: public_sub_vmess-261
+    type: vmess
+    server: 152.67.218.38
+    port: 443
+    uuid: b5e9480a-b7aa-40a4-f9a7-5299b5e363b4
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: 152.67.218.38
+  - name: public_sub_vmess-262
+    type: vmess
+    server: 152.67.8.205
+    port: 80
+    uuid: 9db4c708-aef8-4359-821b-38e47990be0d
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: 152.67.8.205
+  - name: public_sub_vmess-264
+    type: vmess
+    server: 172.64.80.1
+    port: 8443
+    uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: v2ray1.dozapp.xyz
+    network: ws
+    ws-opts:
+      path: /lMnsZUN4/
+      headers:
+        Host: v2ray1.dozapp.xyz
+  - name: public_sub_vmess-265
+    type: vmess
+    server: www.nextkyc.com
+    port: 8443
+    uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: v2ray1.dozapp.xyz
+    network: ws
+    ws-opts:
+      path: /lMnsZUN4/
+      headers:
+        Host: v2ray1.dozapp.xyz
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - auto
+      - public_sub_ss-202
+      - public_sub_ss-213
+      - public_sub_ss-217
+      - public_sub_ss-218
+      - public_sub_ss-220
+      - public_sub_ss-240
+      - public_sub_ss-251
+      - public_sub_ss-262
+      - public_sub_ss-271
+      - public_sub_ss-275
+      - public_sub_ss-282
+      - public_sub_ss-266
+      - public_sub_ss-314
+      - public_sub_ss-405
+      - public_sub_ss-446
+      - public_sub_ss-444
+      - public_sub_ss-452
+      - public_sub_ss-461
+      - public_sub_ss-458
+      - public_sub_ss-464
+      - public_sub_ss-455
+      - public_sub_ss-463
+      - public_sub_ss-457
+      - public_sub_ss-472
+      - public_sub_ss-466
+      - public_sub_ss-475
+      - public_sub_ss-478
+      - public_sub_ss-480
+      - public_sub_ss-477
+      - public_sub_ss-479
+      - public_sub_ss-485
+      - public_sub_ss-484
+      - public_sub_ss-486
+      - public_sub_ss-489
+      - public_sub_ss-490
+      - public_sub_ss-505
+      - public_sub_ss-509
+      - public_sub_ss-507
+      - public_sub_ss-506
+      - public_sub_ss-504
+      - public_sub_ss-508
+      - public_sub_ss-529
+      - public_sub_ss-530
+      - public_sub_ss-534
+      - public_sub_ss-537
+      - public_sub_ss-535
+      - public_sub_ss-538
+      - public_sub_ss-546
+      - public_sub_ss-553
+      - public_sub_ss-561
+      - public_sub_ss-560
+      - public_sub_ss-580
+      - public_sub_ss-611
+      - public_sub_ss-609
+      - public_sub_ss-625
+      - public_sub_ss-621
+      - public_sub_ss-623
+      - public_sub_ss-629
+      - public_sub_ss-620
+      - public_sub_ss-630
+      - public_sub_ss-622
+      - public_sub_ss-633
+      - public_sub_ss-639
+      - public_sub_ss-641
+      - public_sub_ss-642
+      - public_sub_ss-644
+      - public_sub_ss-647
+      - public_sub_ss-645
+      - public_sub_ss-646
+      - public_sub_ss-649
+      - public_sub_ss-650
+      - public_sub_ss-652
+      - public_sub_ss-661
+      - public_sub_ss-665
+      - public_sub_ss-668
+      - public_sub_ss-679
+      - public_sub_ss-690
+      - public_sub_ss-697
+      - public_sub_ss-693
+      - public_sub_ss-696
+      - public_sub_ss-699
+      - public_sub_ss-695
+      - public_sub_ss-707
+      - public_sub_ss-706
+      - public_sub_ss-715
+      - public_sub_ss-716
+      - public_sub_ss-726
+      - public_sub_ss-719
+      - public_sub_ss-725
+      - public_sub_ss-729
+      - public_sub_ss-721
+      - public_sub_ss-730
+      - public_sub_ss-728
+      - public_sub_ss-732
+      - public_sub_ss-743
+      - public_sub_ss-742
+      - public_sub_ss-744
+      - public_sub_ss-749
+      - public_sub_ss-751
+      - public_sub_ss-748
+      - public_sub_ss-760
+      - public_sub_ss-761
+      - public_sub_ss-763
+      - public_sub_ss-764
+      - public_sub_ss-765
+      - public_sub_ss-769
+      - public_sub_ss-771
+      - public_sub_ss-768
+      - public_sub_ss-774
+      - public_sub_ss-776
+      - public_sub_ss-777
+      - public_sub_ss-778
+      - public_sub_ss-786
+      - public_sub_ss-792
+      - public_sub_ss-793
+      - public_sub_ss-799
+      - public_sub_ss-805
+      - public_sub_ss-807
+      - public_sub_ss-813
+      - public_sub_ss-809
+      - public_sub_ss-810
+      - public_sub_ss-814
+      - public_sub_ss-808
+      - public_sub_ss-870
+      - public_sub_ss-865
+      - public_sub_vmess-935
+      - public_sub_vmess-1137
+      - public_sub_vmess-1159
+      - public_sub_vmess-1162
+      - public_sub_vmess-1179
+      - public_sub_vmess-1229
+      - public_sub_trojan-1630
+      - public_sub_trojan-1638
+      - public_sub_trojan-1629
+      - public_sub_trojan-1633
+      - public_sub_trojan-1616
+      - public_sub_trojan-1654
+      - public_sub_trojan-1655
+      - public_sub_trojan-1657
+      - public_sub_trojan-1656
+      - public_sub_trojan-1659
+      - public_sub_trojan-1658
+      - public_sub_trojan-1661
+      - public_sub_trojan-1660
+      - public_sub_vmess-2970
+      - public_sub_vmess-3078
+      - public_sub_vmess-3053
+      - public_sub_vmess-3101
+      - public_sub_vmess-3103
+      - public_sub_vmess-3110
+      - public_sub_vmess-3107
+      - public_sub_vmess-3116
+      - public_sub_vmess-3124
+      - public_sub_vmess-3114
+      - public_sub_vmess-3125
+      - public_sub_vmess-3156
+      - public_sub_vmess-3158
+      - public_sub_vmess-3122
+      - public_sub_vmess-3161
+      - public_sub_vmess-3164
+      - public_sub_vmess-3252
+      - public_sub_vmess-3240
+      - public_sub_vmess-3257
+      - public_sub_vmess-3274
+      - public_sub_vmess-3279
+      - public_sub_vmess-3273
+      - public_sub_vmess-3285
+      - public_sub_vmess-3265
+      - public_sub_vmess-3301
+      - public_sub_vmess-3305
+      - public_sub_vmess-3309
+      - public_sub_vmess-3313
+      - public_sub_vmess-3315
+      - public_sub_vmess-3297
+      - public_sub_vmess-3312
+      - public_sub_vmess-3317
+      - public_sub_vmess-3347
+      - public_sub_vmess-3346
+      - public_sub_vmess-3344
+      - public_sub_vmess-3353
+      - public_sub_vmess-3341
+      - public_sub_vmess-3358
+      - public_sub_vmess-3350
+      - public_sub_vmess-3365
+      - public_sub_vmess-3368
+      - public_sub_vmess-3393
+      - public_sub_vmess-3409
+      - public_sub_vmess-3399
+      - public_sub_vmess-3397
+      - public_sub_vmess-3396
+      - public_sub_vmess-3473
+      - public_sub_vmess-3485
+      - public_sub_vmess-3487
+      - public_sub_vmess-3488
+      - public_sub_vmess-3489
+      - public_sub_vmess-3491
+      - public_sub_vmess-3494
+      - public_sub_vmess-3492
+      - public_sub_vmess-3490
+      - public_sub_vmess-3479
+      - public_sub_vmess-3480
+      - public_sub_vmess-3534
+      - public_sub_vmess-3539
+      - public_sub_vmess-3515
+      - public_sub_vmess-3544
+      - public_sub_vmess-3552
+      - public_sub_vmess-3570
+      - public_sub_vmess-3562
+      - public_sub_vmess-3611
+      - public_sub_vmess-3618
+      - public_sub_vmess-3631
+      - public_sub_vmess-3673
+      - public_sub_ss-7991
+      - public_sub_ss-8009
+      - public_sub_ss-8061
+      - public_sub_ss-8138
+      - public_sub_trojan-8303
+      - public_sub_vmess-9962
+      - public_sub_ss-11138
+      - public_sub_ss-11253
+      - public_sub_ss-11283
+      - public_sub_vmess-15439
+      - public_sub_ss-15644
+      - public_sub_ss-15646
+      - public_sub_ss-15664
+      - public_sub_ss-15671
+      - public_sub_ss-15673
+      - public_sub_ss-15680
+      - public_sub_ss-15672
+      - public_sub_ss-15687
+      - public_sub_ss-15697
+      - public_sub_ss-15703
+      - public_sub_ss-15709
+      - public_sub_ss-15713
+      - public_sub_ss-15718
+      - public_sub_ss-15724
+      - public_sub_ss-15732
+      - public_sub_ss-15736
+      - public_sub_ss-15728
+      - public_sub_ss-15739
+      - public_sub_ss-15740
+      - public_sub_ss-15743
+      - public_sub_ss-15741
+      - public_sub_ss-15750
+      - public_sub_ss-15749
+      - public_sub_ss-15751
+      - public_sub_ss-15747
+      - public_sub_ss-15752
+      - public_sub_ss-15762
+      - public_sub_ss-15726
+      - public_sub_ss-15770
+      - public_sub_ss-15768
+      - public_sub_ss-15769
+      - public_sub_ss-15765
+      - public_sub_ss-15774
+      - public_sub_ss-15779
+      - public_sub_ss-15787
+      - public_sub_ss-15759
+      - public_sub_ss-15760
+      - public_sub_ss-15777
+      - public_sub_ss-15793
+      - public_sub_ss-15761
+      - public_sub_ss-15792
+      - public_sub_ss-15808
+      - public_sub_ss-15803
+      - public_sub_ss-15814
+      - public_sub_ss-15796
+      - public_sub_ss-15809
+      - public_sub_ss-15794
+      - public_sub_ss-15815
+      - public_sub_ss-15813
+      - public_sub_ss-15826
+      - public_sub_ss-15822
+      - public_sub_ss-15817
+      - public_sub_ss-15812
+      - public_sub_ss-15829
+      - public_sub_ss-15832
+      - public_sub_ss-15836
+      - public_sub_trojan-15852
+      - public_sub_ss-15799
+      - public_sub_trojan-15944
+      - public_sub_trojan-15972
+      - public_sub_trojan-17898
+      - public_sub_trojan-17902
+      - public_sub_trojan-17925
+      - public_sub_trojan-17928
+      - public_sub_trojan-17929
+      - public_sub_trojan-17932
+      - public_sub_trojan-17908
+      - public_sub_ss-18824
+      - public_sub_ss-18848
+      - public_sub_ss-20592
+      - public_sub_ss-20608
+      - public_sub_vmess-20698
+      - public_sub_vmess-20736
+      - public_sub_trojan-21051
+      - public_sub_trojan-21054
+      - public_sub_trojan-21057
+      - public_sub_trojan-21579
+      - public_sub_trojan-22111
+      - public_sub_trojan-22132
+      - public_sub_trojan-22135
+      - public_sub_vmess-24477
+      - public_sub_ss-28259
+      - public_sub_ss-28378
+      - public_sub_ss-267
+      - public_sub_ss-281
+      - public_sub_ss-283
+      - public_sub_ss-285
+      - public_sub_ss-286
+      - public_sub_ss-287
+      - public_sub_ss-120
+      - public_sub_ss-121
+      - public_sub_ss-122
+      - public_sub_ss-123
+      - public_sub_ss-136
+      - public_sub_ss-137
+      - public_sub_ss-141
+      - public_sub_ss-144
+      - public_sub_ss-162
+      - public_sub_ss-168
+      - public_sub_ss-169
+      - public_sub_trojan-171
+      - public_sub_trojan-172
+      - public_sub_trojan-173
+      - public_sub_trojan-175
+      - public_sub_trojan-176
+      - public_sub_trojan-177
+      - public_sub_vmess-255
+      - public_sub_vmess-256
+      - public_sub_vmess-257
+      - public_sub_vmess-260
+      - public_sub_vmess-261
+      - public_sub_vmess-262
+      - public_sub_vmess-264
+      - public_sub_vmess-265
+      - DIRECT
+  - name: auto
+    type: url-test
+    proxies:
+      - public_sub_ss-202
+      - public_sub_ss-213
+      - public_sub_ss-217
+      - public_sub_ss-218
+      - public_sub_ss-220
+      - public_sub_ss-240
+      - public_sub_ss-251
+      - public_sub_ss-262
+      - public_sub_ss-271
+      - public_sub_ss-275
+      - public_sub_ss-282
+      - public_sub_ss-266
+      - public_sub_ss-314
+      - public_sub_ss-405
+      - public_sub_ss-446
+      - public_sub_ss-444
+      - public_sub_ss-452
+      - public_sub_ss-461
+      - public_sub_ss-458
+      - public_sub_ss-464
+      - public_sub_ss-455
+      - public_sub_ss-463
+      - public_sub_ss-457
+      - public_sub_ss-472
+      - public_sub_ss-466
+      - public_sub_ss-475
+      - public_sub_ss-478
+      - public_sub_ss-480
+      - public_sub_ss-477
+      - public_sub_ss-479
+      - public_sub_ss-485
+      - public_sub_ss-484
+      - public_sub_ss-486
+      - public_sub_ss-489
+      - public_sub_ss-490
+      - public_sub_ss-505
+      - public_sub_ss-509
+      - public_sub_ss-507
+      - public_sub_ss-506
+      - public_sub_ss-504
+      - public_sub_ss-508
+      - public_sub_ss-529
+      - public_sub_ss-530
+      - public_sub_ss-534
+      - public_sub_ss-537
+      - public_sub_ss-535
+      - public_sub_ss-538
+      - public_sub_ss-546
+      - public_sub_ss-553
+      - public_sub_ss-561
+      - public_sub_ss-560
+      - public_sub_ss-580
+      - public_sub_ss-611
+      - public_sub_ss-609
+      - public_sub_ss-625
+      - public_sub_ss-621
+      - public_sub_ss-623
+      - public_sub_ss-629
+      - public_sub_ss-620
+      - public_sub_ss-630
+      - public_sub_ss-622
+      - public_sub_ss-633
+      - public_sub_ss-639
+      - public_sub_ss-641
+      - public_sub_ss-642
+      - public_sub_ss-644
+      - public_sub_ss-647
+      - public_sub_ss-645
+      - public_sub_ss-646
+      - public_sub_ss-649
+      - public_sub_ss-650
+      - public_sub_ss-652
+      - public_sub_ss-661
+      - public_sub_ss-665
+      - public_sub_ss-668
+      - public_sub_ss-679
+      - public_sub_ss-690
+      - public_sub_ss-697
+      - public_sub_ss-693
+      - public_sub_ss-696
+      - public_sub_ss-699
+      - public_sub_ss-695
+      - public_sub_ss-707
+      - public_sub_ss-706
+      - public_sub_ss-715
+      - public_sub_ss-716
+      - public_sub_ss-726
+      - public_sub_ss-719
+      - public_sub_ss-725
+      - public_sub_ss-729
+      - public_sub_ss-721
+      - public_sub_ss-730
+      - public_sub_ss-728
+      - public_sub_ss-732
+      - public_sub_ss-743
+      - public_sub_ss-742
+      - public_sub_ss-744
+      - public_sub_ss-749
+      - public_sub_ss-751
+      - public_sub_ss-748
+      - public_sub_ss-760
+      - public_sub_ss-761
+      - public_sub_ss-763
+      - public_sub_ss-764
+      - public_sub_ss-765
+      - public_sub_ss-769
+      - public_sub_ss-771
+      - public_sub_ss-768
+      - public_sub_ss-774
+      - public_sub_ss-776
+      - public_sub_ss-777
+      - public_sub_ss-778
+      - public_sub_ss-786
+      - public_sub_ss-792
+      - public_sub_ss-793
+      - public_sub_ss-799
+      - public_sub_ss-805
+      - public_sub_ss-807
+      - public_sub_ss-813
+      - public_sub_ss-809
+      - public_sub_ss-810
+      - public_sub_ss-814
+      - public_sub_ss-808
+      - public_sub_ss-870
+      - public_sub_ss-865
+      - public_sub_vmess-935
+      - public_sub_vmess-1137
+      - public_sub_vmess-1159
+      - public_sub_vmess-1162
+      - public_sub_vmess-1179
+      - public_sub_vmess-1229
+      - public_sub_trojan-1630
+      - public_sub_trojan-1638
+      - public_sub_trojan-1629
+      - public_sub_trojan-1633
+      - public_sub_trojan-1616
+      - public_sub_trojan-1654
+      - public_sub_trojan-1655
+      - public_sub_trojan-1657
+      - public_sub_trojan-1656
+      - public_sub_trojan-1659
+      - public_sub_trojan-1658
+      - public_sub_trojan-1661
+      - public_sub_trojan-1660
+      - public_sub_vmess-2970
+      - public_sub_vmess-3078
+      - public_sub_vmess-3053
+      - public_sub_vmess-3101
+      - public_sub_vmess-3103
+      - public_sub_vmess-3110
+      - public_sub_vmess-3107
+      - public_sub_vmess-3116
+      - public_sub_vmess-3124
+      - public_sub_vmess-3114
+      - public_sub_vmess-3125
+      - public_sub_vmess-3156
+      - public_sub_vmess-3158
+      - public_sub_vmess-3122
+      - public_sub_vmess-3161
+      - public_sub_vmess-3164
+      - public_sub_vmess-3252
+      - public_sub_vmess-3240
+      - public_sub_vmess-3257
+      - public_sub_vmess-3274
+      - public_sub_vmess-3279
+      - public_sub_vmess-3273
+      - public_sub_vmess-3285
+      - public_sub_vmess-3265
+      - public_sub_vmess-3301
+      - public_sub_vmess-3305
+      - public_sub_vmess-3309
+      - public_sub_vmess-3313
+      - public_sub_vmess-3315
+      - public_sub_vmess-3297
+      - public_sub_vmess-3312
+      - public_sub_vmess-3317
+      - public_sub_vmess-3347
+      - public_sub_vmess-3346
+      - public_sub_vmess-3344
+      - public_sub_vmess-3353
+      - public_sub_vmess-3341
+      - public_sub_vmess-3358
+      - public_sub_vmess-3350
+      - public_sub_vmess-3365
+      - public_sub_vmess-3368
+      - public_sub_vmess-3393
+      - public_sub_vmess-3409
+      - public_sub_vmess-3399
+      - public_sub_vmess-3397
+      - public_sub_vmess-3396
+      - public_sub_vmess-3473
+      - public_sub_vmess-3485
+      - public_sub_vmess-3487
+      - public_sub_vmess-3488
+      - public_sub_vmess-3489
+      - public_sub_vmess-3491
+      - public_sub_vmess-3494
+      - public_sub_vmess-3492
+      - public_sub_vmess-3490
+      - public_sub_vmess-3479
+      - public_sub_vmess-3480
+      - public_sub_vmess-3534
+      - public_sub_vmess-3539
+      - public_sub_vmess-3515
+      - public_sub_vmess-3544
+      - public_sub_vmess-3552
+      - public_sub_vmess-3570
+      - public_sub_vmess-3562
+      - public_sub_vmess-3611
+      - public_sub_vmess-3618
+      - public_sub_vmess-3631
+      - public_sub_vmess-3673
+      - public_sub_ss-7991
+      - public_sub_ss-8009
+      - public_sub_ss-8061
+      - public_sub_ss-8138
+      - public_sub_trojan-8303
+      - public_sub_vmess-9962
+      - public_sub_ss-11138
+      - public_sub_ss-11253
+      - public_sub_ss-11283
+      - public_sub_vmess-15439
+      - public_sub_ss-15644
+      - public_sub_ss-15646
+      - public_sub_ss-15664
+      - public_sub_ss-15671
+      - public_sub_ss-15673
+      - public_sub_ss-15680
+      - public_sub_ss-15672
+      - public_sub_ss-15687
+      - public_sub_ss-15697
+      - public_sub_ss-15703
+      - public_sub_ss-15709
+      - public_sub_ss-15713
+      - public_sub_ss-15718
+      - public_sub_ss-15724
+      - public_sub_ss-15732
+      - public_sub_ss-15736
+      - public_sub_ss-15728
+      - public_sub_ss-15739
+      - public_sub_ss-15740
+      - public_sub_ss-15743
+      - public_sub_ss-15741
+      - public_sub_ss-15750
+      - public_sub_ss-15749
+      - public_sub_ss-15751
+      - public_sub_ss-15747
+      - public_sub_ss-15752
+      - public_sub_ss-15762
+      - public_sub_ss-15726
+      - public_sub_ss-15770
+      - public_sub_ss-15768
+      - public_sub_ss-15769
+      - public_sub_ss-15765
+      - public_sub_ss-15774
+      - public_sub_ss-15779
+      - public_sub_ss-15787
+      - public_sub_ss-15759
+      - public_sub_ss-15760
+      - public_sub_ss-15777
+      - public_sub_ss-15793
+      - public_sub_ss-15761
+      - public_sub_ss-15792
+      - public_sub_ss-15808
+      - public_sub_ss-15803
+      - public_sub_ss-15814
+      - public_sub_ss-15796
+      - public_sub_ss-15809
+      - public_sub_ss-15794
+      - public_sub_ss-15815
+      - public_sub_ss-15813
+      - public_sub_ss-15826
+      - public_sub_ss-15822
+      - public_sub_ss-15817
+      - public_sub_ss-15812
+      - public_sub_ss-15829
+      - public_sub_ss-15832
+      - public_sub_ss-15836
+      - public_sub_trojan-15852
+      - public_sub_ss-15799
+      - public_sub_trojan-15944
+      - public_sub_trojan-15972
+      - public_sub_trojan-17898
+      - public_sub_trojan-17902
+      - public_sub_trojan-17925
+      - public_sub_trojan-17928
+      - public_sub_trojan-17929
+      - public_sub_trojan-17932
+      - public_sub_trojan-17908
+      - public_sub_ss-18824
+      - public_sub_ss-18848
+      - public_sub_ss-20592
+      - public_sub_ss-20608
+      - public_sub_vmess-20698
+      - public_sub_vmess-20736
+      - public_sub_trojan-21051
+      - public_sub_trojan-21054
+      - public_sub_trojan-21057
+      - public_sub_trojan-21579
+      - public_sub_trojan-22111
+      - public_sub_trojan-22132
+      - public_sub_trojan-22135
+      - public_sub_vmess-24477
+      - public_sub_ss-28259
+      - public_sub_ss-28378
+      - public_sub_ss-267
+      - public_sub_ss-281
+      - public_sub_ss-283
+      - public_sub_ss-285
+      - public_sub_ss-286
+      - public_sub_ss-287
+      - public_sub_ss-120
+      - public_sub_ss-121
+      - public_sub_ss-122
+      - public_sub_ss-123
+      - public_sub_ss-136
+      - public_sub_ss-137
+      - public_sub_ss-141
+      - public_sub_ss-144
+      - public_sub_ss-162
+      - public_sub_ss-168
+      - public_sub_ss-169
+      - public_sub_trojan-171
+      - public_sub_trojan-172
+      - public_sub_trojan-173
+      - public_sub_trojan-175
+      - public_sub_trojan-176
+      - public_sub_trojan-177
+      - public_sub_vmess-255
+      - public_sub_vmess-256
+      - public_sub_vmess-257
+      - public_sub_vmess-260
+      - public_sub_vmess-261
+      - public_sub_vmess-262
+      - public_sub_vmess-264
+      - public_sub_vmess-265
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+rules:
+  - MATCH,PROXY

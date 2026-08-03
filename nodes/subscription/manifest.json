@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-08-03T09:28:16.174261+08:00",
+  "source": "nodes/sing-box/outbounds.json (仅 live PASS)",
+  "share_link_count": 1242,
+  "clash_proxy_count": 1242,
+  "wireguard_conf_count": 0,
+  "by_protocol": {
+    "vless": 906,
+    "shadowsocks": 212,
+    "vmess": 87,
+    "trojan": 37
+  },
+  "skipped": [
+    {
+      "tag": "public_sub_hysteria2-890",
+      "reason": "uri build failed"
+    },
+    {
+      "tag": "public_sub_hysteria2-920",
+      "reason": "uri build failed"
+    },
+    {
+      "tag": "public_sub_hysteria2-926",
+      "reason": "uri build failed"
+    },
+    {
+      "tag": "public_sub_hysteria2-908",
+      "reason": "uri build failed"
+    },
+    {
+      "tag": "public_sub_hysteria2-929",
+      "reason": "uri build failed"
+    },
+    {
+      "tag": "public_sub_hysteria2-928",
+      "reason": "uri build failed"
+    },
+    {
+      "tag": "public_sub_hysteria2-1260",
+      "reason": "uri build failed"
+    },
+    {
+      "tag": "public_sub_hysteria2-1261",
+      "reason": "uri build failed"
+    },
+    {
+      "tag": "public_sub_hysteria2-1257",
+      "reason": "uri build failed"
+    },
+    {
+      "tag": "public_sub_hysteria2-1256",
+      "reason": "uri build failed"
+    },
+    {
+      "tag": "public_sub_hysteria2-1262",
+      "reason": "uri build failed"
+    }
+  ],
+  "files": {
+    "raw": "/Users/lazzman/Codes/Code/Demo/cursor/白帽/打野-节点/public-sub-harvester-standalone/nodes/subscription/verified.txt",
+    "base64": "/Users/lazzman/Codes/Code/Demo/cursor/白帽/打野-节点/public-sub-harvester-standalone/nodes/subscription/verified_base64.txt",
+    "clash": "/Users/lazzman/Codes/Code/Demo/cursor/白帽/打野-节点/public-sub-harvester-standalone/nodes/subscription/verified_clash.yaml",
+    "fsl64": "/Users/lazzman/Codes/Code/Demo/cursor/白帽/打野-节点/public-sub-harvester-standalone/nodes/subscription/fsl64",
+    "fslyaml": "/Users/lazzman/Codes/Code/Demo/cursor/白帽/打野-节点/public-sub-harvester-standalone/nodes/subscription/fslyaml",
+    "fslsb": "/Users/lazzman/Codes/Code/Demo/cursor/白帽/打野-节点/public-sub-harvester-standalone/nodes/subscription/fslsb",
+    "fslyamlcomp": "/Users/lazzman/Codes/Code/Demo/cursor/白帽/打野-节点/public-sub-harvester-standalone/nodes/subscription/fslyamlcomp",
+    "wireguard_dir": "/Users/lazzman/Codes/Code/Demo/cursor/白帽/打野-节点/public-sub-harvester-standalone/nodes/subscription/wireguard"
+  },
+  "formats": {
+    "fsl64": "通用 base64 分享链订阅",
+    "fslyaml": "Clash Meta YAML",
+    "fslsb": "sing-box JSON 配置",
+    "fslyamlcomp": "老版 Clash 兼容 YAML（ss/vmess/trojan）"
+  },
+  "usage": {
+    "v2rayN_etc": "订阅 URL 使用 .../fsl64 或 verified_base64.txt",
+    "clash_meta": "将 URL 中 fsl64 换成 fslyaml",
+    "singbox": "将 URL 中 fsl64 换成 fslsb",
+    "clash_legacy": "将 URL 中 fsl64 换成 fslyamlcomp",
+    "wireguard": "wireguard/*.conf"
+  },
+  "legacy_clash_proxy_count": 336
+}

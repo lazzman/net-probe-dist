@@ -1,0 +1,98 @@
+# Periodic probe export publisher (lab artifacts)
+name: publish-dist
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      workers:
+        description: "Parallel probe workers (16-32 typical on GHA)"
+        required: false
+        default: "24"
+      skip_live:
+        description: "Export only (skip live probes) true/false"
+        required: false
+        default: "false"
+
+concurrency:
+  group: publish-dist
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install runtime
+        run: |
+          set -euo pipefail
+          VER="1.13.15"
+          curl -fsSL -o /tmp/rt.tgz \
+            "https://github.com/SagerNet/sing-box/releases/download/v${VER}/sing-box-${VER}-linux-amd64.tar.gz"
+          tar -xzf /tmp/rt.tgz -C /tmp
+          sudo install -m 755 "/tmp/sing-box-${VER}-linux-amd64/sing-box" /usr/local/bin/sing-box
+          sing-box version
+
+      - name: Build probe exports
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: |
+          set -euo pipefail
+          WORKERS="${{ github.event.inputs.workers || '24' }}"
+          SKIP="${{ github.event.inputs.skip_live || 'false' }}"
+          EXTRA=()
+          if [ "$SKIP" = "true" ]; then EXTRA+=(--skip-live); fi
+          python3 scripts/ci_public_sub_pipeline.py --workspace . --workers "$WORKERS" "${EXTRA[@]}"
+
+      - name: Commit dist (overwrite)
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          paths=(
+            dist
+            STATUS.json
+            nodes/subscription
+            nodes/sing-box
+            analysis/findings/_public_sub_by_source.json
+            analysis/findings/_public_sub_nodes_full.json
+            analysis/findings/_public_sub_source_availability.json
+            analysis/findings/_public_sub_source_summary.md
+            analysis/findings/_public_sub_meta.json
+          )
+          for p in "${paths[@]}"; do
+            if [ -e "$p" ]; then
+              git add -A -- "$p"
+            else
+              echo "skip missing: $p"
+            fi
+          done
+          git reset HEAD -- analysis/findings/_public_sub_nodes.json 2>/dev/null || true
+          git rm -r --cached --ignore-unmatch analysis/findings/_public_sub_nodes.json 2>/dev/null || true
+
+          echo "==== staged ===="
+          git diff --cached --stat || true
+          if git diff --cached --quiet; then
+            echo "No staged changes"
+            git status -sb || true
+            exit 0
+          fi
+          TS="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git commit -m "chore(dist): refresh probe exports ${TS}"
+          git push origin HEAD:main
+          echo "Pushed $(git rev-parse --short HEAD)"

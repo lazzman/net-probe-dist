@@ -1,0 +1,14 @@
+# 可重生成的超大全量缓存
+analysis/findings/_public_sub_nodes.json
+nodes/sing-box/outbounds.failed*.json
+nodes/sing-box/full_public_live_state.json
+**/__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+*.log
+
+# 禁止提交含私钥的 WireGuard conf（GitGuardian 会告警）
+sub/wireguard/
+nodes/subscription/wireguard/
+**/*.conf
