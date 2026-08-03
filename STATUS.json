@@ -1,35 +1,35 @@
 {
-  "updated_at": "2026-08-03T15:24:27+08:00",
+  "updated_at": "2026-08-03T18:15:49.370844+08:00",
   "conclusion": "success",
-  "note": "recovered from Actions build 30790795370 (assets uploaded; release notes edit failed)",
+  "note": "recovered after publish diagnostics field failure; assets uploaded in run 30801453933",
   "subscription": {
-    "share_link_count": 1609,
-    "clash_proxy_count": 1609,
+    "share_link_count": 1314,
+    "clash_proxy_count": 1314,
     "by_protocol": {
-      "vless": 1261,
-      "shadowsocks": 212,
-      "trojan": 47,
-      "vmess": 89
+      "vless": 1004,
+      "shadowsocks": 187,
+      "trojan": 38,
+      "vmess": 85
     }
   },
   "singbox": {
-    "verified": 1710,
-    "public_unique": 28772,
-    "public_new_pass": 6523,
-    "public_fail": 22137,
+    "verified": 1407,
+    "public_unique": 28578,
+    "public_new_pass": 5826,
+    "public_fail": 22642,
     "mode": "full_no_sample",
     "source": "full_public_live_verify",
-    "tested": 28660,
-    "elapsed_sec": 2825,
+    "tested": 28468,
+    "elapsed_sec": 2890.8,
     "workers": 32
   },
   "worker": {
     "workers": 32,
-    "elapsed_sec": 2825,
-    "tested": 28660,
-    "pass": 6523,
-    "fail": 22137,
+    "elapsed_sec": 2890.8,
+    "tested": 28468,
+    "pass": 5826,
+    "fail": 22642,
     "conclusion": "success",
-    "run_id": "30790795370"
+    "run_id": "30801453933"
   }
 }

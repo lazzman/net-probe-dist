@@ -15,6 +15,7 @@ on:
         required: false
         default: "false"
 
+# 同一时刻只允许一个发布 run；不取消进行中的全量探测，避免白跑
 concurrency:
   group: publish-dist
   cancel-in-progress: false
@@ -76,6 +77,7 @@ jobs:
             echo
             echo "- Updated (UTC): **${TS}**"
             echo "- Tag: \`${TAG}\` (assets overwritten each run)"
+            echo "- Run: ${{ github.run_id }}"
             echo
             if [ -f STATUS.json ]; then
               echo "### STATUS"
@@ -87,7 +89,12 @@ jobs:
               echo
               echo "### manifest (summary)"
               echo '```json'
-              python3 -c 'import json; m=json.load(open("dist/manifest.json")); print(json.dumps({k:m.get(k) for k in ("generated_at","share_link_count","clash_proxy_count","by_protocol","formats") if k in m or True}, ensure_ascii=False, indent=2))'
+              python3 - <<'PY'
+          import json
+          keys = ("generated_at", "share_link_count", "clash_proxy_count", "by_protocol", "formats")
+          m = json.load(open("dist/manifest.json", encoding="utf-8"))
+          print(json.dumps({k: m.get(k) for k in keys}, ensure_ascii=False, indent=2))
+          PY
               echo '```'
             fi
             echo
@@ -96,6 +103,7 @@ jobs:
             echo "- https://github.com/${GITHUB_REPOSITORY}/releases/latest/download/fslyaml"
             echo "- https://github.com/${GITHUB_REPOSITORY}/releases/latest/download/fslsb"
             echo "- https://github.com/${GITHUB_REPOSITORY}/releases/latest/download/fslyamlcomp"
+            echo "- https://github.com/${GITHUB_REPOSITORY}/releases/latest/download/manifest.json"
           } > "$NOTES_FILE"
 
           ASSETS=(dist/fsl64 dist/fslyaml dist/fslsb dist/fslyamlcomp)
@@ -103,10 +111,9 @@ jobs:
 
           # 固定 tag=dist，每次覆盖资源。
           # 注意：gh release edit 的 --latest 是布尔 flag，不能写成 --latest true。
-          # 上传与 notes 分开，避免 notes/edit 失败回滚已成功的 asset 覆盖。
+          # 上传与 notes 分开；诊断命令只读合法 JSON 字段，避免把成功发布标成失败。
           if gh release view "$TAG" >/dev/null 2>&1; then
             gh release upload "$TAG" "${ASSETS[@]}" --clobber
-            # 先更新 notes/title；--latest 单独执行，失败不阻断（已是 latest 时部分环境会报错）
             gh release edit "$TAG" --notes-file "$NOTES_FILE" --title "Probe export packages"
             gh release edit "$TAG" --latest || echo "warn: mark --latest skipped/failed (assets already uploaded)"
           else
@@ -116,7 +123,9 @@ jobs:
               --latest
           fi
           echo "Release published: https://github.com/${GITHUB_REPOSITORY}/releases/tag/${TAG}"
-          gh release view "$TAG" --json tagName,isLatest,updatedAt,assets --jq '{tag:.tagName,isLatest,updatedAt,assets:[.assets[].name]}'
+          # 可用字段：tagName/name/publishedAt/isDraft/assets（无 isLatest/updatedAt）
+          gh release view "$TAG" --json tagName,name,publishedAt,isDraft,assets \
+            --jq '{tag:.tagName,name,publishedAt,isDraft,assets:[.assets[].name]}'
 
       - name: Refresh README status + commit pointers
         env:
@@ -143,7 +152,25 @@ jobs:
             git status -sb || true
             exit 0
           fi
+
           TS="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          git commit -m "chore(status): update README timestamp ${TS}"
-          git push origin HEAD:main
-          echo "Pushed $(git rev-parse --short HEAD)"
+          RUN_ID="${{ github.run_id }}"
+          git commit -m "chore(status): update README timestamp ${TS} (run ${RUN_ID})"
+
+          # 并发保护：rebase 后重试 push，避免远程有新提交时直接失败
+          for i in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "Pushed $(git rev-parse --short HEAD)"
+              exit 0
+            fi
+            echo "push rejected (attempt $i), rebasing onto origin/main ..."
+            git fetch origin main
+            git rebase origin/main || {
+              echo "rebase conflict; abort and keep local status commit"
+              git rebase --abort || true
+              exit 1
+            }
+            sleep 2
+          done
+          echo "push failed after retries"
+          exit 1
