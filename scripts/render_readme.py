@@ -99,7 +99,12 @@ def main() -> int:
     def fmt(v):
         return "—" if v is None or v == "" else v
 
-    elapsed_s = f"{elapsed}s" if elapsed is not None else "—"
+    def badge_val(v, suffix=""):
+        if v is None or v == "" or v == "—":
+            return "n/a"
+        return f"{v}{suffix}"
+
+    elapsed_s = f"{elapsed}s" if elapsed is not None else "n/a"
     conc_color = {
         "success": "brightgreen",
         "failure": "red",
@@ -109,12 +114,12 @@ def main() -> int:
 
     # dynamic status badges (static shields from current STATUS)
     b_update = shield("updated", updated_short, "informational", "github")
-    b_workers = shield("workers", str(fmt(workers)), "blueviolet", "//")
+    b_workers = shield("workers", badge_val(workers), "blueviolet")
     b_result = shield("result", str(conclusion), conc_color, "githubactions")
-    b_profiles = shield("profiles", str(fmt(verified)), "blue")
-    b_pass = shield("live_pass", str(fmt(public_pass)), "brightgreen")
-    b_fail = shield("live_fail", str(fmt(public_fail)), "orange")
-    b_elapsed = shield("elapsed", elapsed_s.replace(" ", ""), "lightgrey")
+    b_profiles = shield("profiles", badge_val(verified), "blue")
+    b_pass = shield("live_pass", badge_val(public_pass), "brightgreen")
+    b_fail = shield("live_fail", badge_val(public_fail), "orange")
+    b_elapsed = shield("elapsed", elapsed_s.replace(" ", "_"), "lightgrey")
 
     badges = f"""[![publish-dist]({badge_workflow})]({actions})
 [![release]({badge_release})]({rel})

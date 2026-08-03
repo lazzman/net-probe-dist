@@ -6,11 +6,11 @@
 [![downloads](https://img.shields.io/github/downloads/lazzman/net-probe-dist/total?style=flat-square&label=downloads)](https://github.com/lazzman/net-probe-dist/releases/latest)
 ![updated: 2026-08-03 14:41:41](https://img.shields.io/badge/updated-2026--08--03_14%3A41%3A41-informational?logo=github&logoColor=white)
 ![result: success](https://img.shields.io/badge/result-success-brightgreen?logo=githubactions&logoColor=white)
-![workers: 24](https://img.shields.io/badge/workers-24-blueviolet?logo=//&logoColor=white)
-![elapsed: —](https://img.shields.io/badge/elapsed-%E2%80%94-lightgrey)
-![profiles: —](https://img.shields.io/badge/profiles-%E2%80%94-blue)
-![live_pass: —](https://img.shields.io/badge/live__pass-%E2%80%94-brightgreen)
-![live_fail: —](https://img.shields.io/badge/live__fail-%E2%80%94-orange)
+![workers: 24](https://img.shields.io/badge/workers-24-blueviolet)
+![elapsed: n/a](https://img.shields.io/badge/elapsed-n%2Fa-lightgrey)
+![profiles: n/a](https://img.shields.io/badge/profiles-n%2Fa-blue)
+![live_pass: n/a](https://img.shields.io/badge/live__pass-n%2Fa-brightgreen)
+![live_fail: n/a](https://img.shields.io/badge/live__fail-n%2Fa-orange)
 
 
 Lab CI utility: periodic **HTTP reachability probes** over public endpoint lists, then publish **encoded profile packages**.
@@ -24,7 +24,7 @@ Packages are attached to **GitHub Releases** (not stored in git history).
 | **Last update** | `2026-08-03T14:41:41.686442+08:00` |
 | **Workflow result** | `success` |
 | **Workers** | `24` |
-| **Elapsed** | `—` |
+| **Elapsed** | `n/a` |
 | **Probe mode** | `full_no_sample` |
 | **Candidates (unique)** | `—` |
 | **Live PASS (raw)** | `—` |
