@@ -1,5 +1,18 @@
 # net-probe-dist
 
+[![publish-dist](https://github.com/lazzman/net-probe-dist/actions/workflows/publish-dist.yml/badge.svg)](https://github.com/lazzman/net-probe-dist/actions/workflows/publish-dist.yml)
+[![release](https://img.shields.io/github/v/release/lazzman/net-probe-dist?style=flat-square&label=release)](https://github.com/lazzman/net-probe-dist/releases/latest)
+[![release-date](https://img.shields.io/github/release-date/lazzman/net-probe-dist?style=flat-square&label=released)](https://github.com/lazzman/net-probe-dist/releases/latest)
+[![downloads](https://img.shields.io/github/downloads/lazzman/net-probe-dist/total?style=flat-square&label=downloads)](https://github.com/lazzman/net-probe-dist/releases/latest)
+![updated: 2026-08-03 14:41:41](https://img.shields.io/badge/updated-2026--08--03_14%3A41%3A41-informational?logo=github&logoColor=white)
+![result: success](https://img.shields.io/badge/result-success-brightgreen?logo=githubactions&logoColor=white)
+![workers: 24](https://img.shields.io/badge/workers-24-blueviolet?logo=//&logoColor=white)
+![elapsed: —](https://img.shields.io/badge/elapsed-%E2%80%94-lightgrey)
+![profiles: —](https://img.shields.io/badge/profiles-%E2%80%94-blue)
+![live_pass: —](https://img.shields.io/badge/live__pass-%E2%80%94-brightgreen)
+![live_fail: —](https://img.shields.io/badge/live__fail-%E2%80%94-orange)
+
+
 Lab CI utility: periodic **HTTP reachability probes** over public endpoint lists, then publish **encoded profile packages**.
 
 Packages are attached to **GitHub Releases** (not stored in git history).
@@ -39,7 +52,7 @@ Swap the filename (`fsl64` → other code) to switch format.
 
 - Workflow: `publish-dist` (every 6 hours + manual)
 - Uploads/clobbers assets on release tag `dist`
-- Each run refreshes **Last update** + **Workers** on this README
+- Each run refreshes **Last update** + **Workers** badges/table on this README
 - Git tree keeps code + status pointers only (no large blobs)
 
 ## Local
