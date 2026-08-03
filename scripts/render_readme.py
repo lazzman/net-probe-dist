@@ -83,7 +83,11 @@ def main() -> int:
     public_unique = sb.get("public_unique")
     public_pass = sb.get("public_new_pass")
     public_fail = sb.get("public_fail")
-    mode = sb.get("mode") or "full_no_sample"
+    mode = sb.get("mode") or "accumulate_full_no_sample"
+    retained_hist = sb.get("retained_history_pass")
+    new_pass = sb.get("new_pass")
+    hist_dropped = sb.get("history_dropped")
+    prev_public = sb.get("previous_public")
     workers = worker.get("workers") or worker.get("count") or sb.get("workers")
     elapsed = worker.get("elapsed_sec") if worker.get("elapsed_sec") is not None else sb.get("elapsed_sec")
     conclusion = worker.get("conclusion") or status.get("conclusion") or "success"
@@ -119,6 +123,9 @@ def main() -> int:
     b_profiles = shield("profiles", badge_val(verified), "blue")
     b_pass = shield("live_hits", badge_val(public_pass), "brightgreen")
     b_fail = shield("live_fail", badge_val(public_fail), "orange")
+    b_retained = shield("kept", badge_val(retained_hist), "blue")
+    b_new = shield("new", badge_val(new_pass), "success")
+    b_drop = shield("dropped", badge_val(hist_dropped), "important")
     b_elapsed = shield("elapsed", elapsed_s.replace(" ", "_"), "lightgrey")
 
     badges = f"""[![publish-dist]({badge_workflow})]({actions})
@@ -132,6 +139,9 @@ def main() -> int:
 {b_profiles}
 {b_pass}
 {b_fail}
+{b_retained}
+{b_new}
+{b_drop}
 """
 
     readme = f"""# net-probe-dist
@@ -152,8 +162,12 @@ Packages are attached to **GitHub Releases** (not stored in git history).
 | **Elapsed** | `{elapsed_s}` |
 | **Probe mode** | `{fmt(mode)}` |
 | **Candidates (unique)** | `{fmt(public_unique)}` |
-| **Live PASS (raw hits)** | `{fmt(public_pass)}` |
+| **Live PASS (pool hits)** | `{fmt(public_pass)}` |
 | **Live FAIL** | `{fmt(public_fail)}` |
+| **History retained** | `{fmt(retained_hist)}` |
+| **New PASS** | `{fmt(new_pass)}` |
+| **History dropped** | `{fmt(hist_dropped)}` |
+| **Previous public** | `{fmt(prev_public)}` |
 | **Published profiles (deduped)** | `{fmt(verified)}` |
 | **Share links (exportable)** | `{fmt(share_n)}` |
 | **YAML proxies (exportable)** | `{fmt(clash_n)}` |
@@ -163,12 +177,14 @@ Packages are attached to **GitHub Releases** (not stored in git history).
 
 These fields are **not** the same quantity:
 
-1. **Candidates (unique)** — 公开订阅去重后的候选链接数  
-2. **Live PASS (raw hits)** — 探测过程中判 PASS 的**次数**（同一 endpoint 多条链接会重复计数）  
-3. **Published profiles (deduped)** — 按 `type:server:port:凭证` 指纹去重后的最终 outbound 数（`fslsb` 接近此值）  
-4. **Share links / YAML proxies** — 能导出为通用分享链 / Clash 的节点（现含 vless/ss/trojan/vmess/**hysteria2**）
+1. **Candidates (unique)** — 本轮公开订阅去重候选  
+2. **Pool** — 候选 ∪ 历史 public（累积）；历史节点**每轮复测**  
+3. **Live PASS / FAIL** — 对本轮 pool 的测活结果  
+4. **History retained / New PASS / History dropped** — 累积账本：留下的老节点 / 新通过 / 被淘汰的老节点  
+5. **Published profiles** — 指纹去重后的最终 outbound（`fslsb` / `outbounds.json`）  
+6. **Share links / YAML** — 可导出分享链的节点（vless/ss/trojan/vmess/hysteria2）
 
-所以常见现象：Live PASS 五千多，最终订阅一千多——主要是重复 endpoint 被合并，而不是探测结果被丢弃。
+Mode: **accumulate**（默认）= 累积 + 历史复测；`--fresh` = 仅本轮、不累积。
 
 ## Latest packages
 

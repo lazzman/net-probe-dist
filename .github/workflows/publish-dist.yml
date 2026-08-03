@@ -103,6 +103,7 @@ jobs:
 
           ASSETS=(dist/fsl64 dist/fslyaml dist/fslsb dist/fslyamlcomp)
           [ -f dist/manifest.json ] && ASSETS+=(dist/manifest.json)
+          [ -f dist/outbounds.json ] && ASSETS+=(dist/outbounds.json)
 
           # 固定 tag=dist，每次覆盖资源。
           # 注意：gh release edit 的 --latest 是布尔 flag，不能写成 --latest true。

@@ -44,7 +44,9 @@ def main() -> int:
         ws,
     )
 
-    # 2) 全量 live（fresh 覆盖 public）
+    # 2) 全量 live：默认累积模式
+    # - 并入上一轮 public PASS（Release 种子 / 本地 outbounds）
+    # - 历史 PASS 每轮重新测活，失败淘汰；新 PASS 并入
     if not args.skip_live:
         run(
             [
@@ -54,7 +56,7 @@ def main() -> int:
                 str(ws),
                 "--workers",
                 str(args.workers),
-                "--fresh",
+                "--accumulate",
                 "--nodes-json",
                 str(ws / "analysis/findings/_public_sub_nodes.json"),
             ],
@@ -85,6 +87,10 @@ def main() -> int:
         sp = src / a
         if sp.exists():
             shutil.copy2(sp, dst / b)
+    # 累积种子：下一轮 CI 从 Release 拉取
+    ob = ws / "nodes/sing-box/outbounds.json"
+    if ob.exists():
+        shutil.copy2(ob, dst / "outbounds.json")
     # 公开仓禁止发布 wireguard 私钥 conf
     wg_dst = dst / "wireguard"
     if wg_dst.exists():
@@ -150,6 +156,13 @@ Swap the last path segment (`fsl64` → other code) to switch package type.
             "tested": sb_man.get("tested"),
             "elapsed_sec": sb_man.get("elapsed_sec"),
             "workers": sb_man.get("workers"),
+            "accumulate": sb_man.get("accumulate"),
+            "previous_public": sb_man.get("previous_public"),
+            "retained_history_pass": sb_man.get("retained_history_pass"),
+            "new_pass": sb_man.get("new_pass"),
+            "history_dropped": sb_man.get("history_dropped"),
+            "hist_only": sb_man.get("hist_only"),
+            "pool_size": sb_man.get("pool_size"),
         },
         "worker": {
             "workers": sb_man.get("workers") if sb_man.get("workers") is not None else args.workers,
