@@ -101,9 +101,10 @@ jobs:
           ASSETS=(dist/fsl64 dist/fslyaml dist/fslsb dist/fslyamlcomp)
           [ -f dist/manifest.json ] && ASSETS+=(dist/manifest.json)
 
+          # 固定 tag=dist，每次覆盖资源；避免 --latest true 这类非法参数
           if gh release view "$TAG" >/dev/null 2>&1; then
             gh release upload "$TAG" "${ASSETS[@]}" --clobber
-            gh release edit "$TAG" --notes-file "$NOTES_FILE" --latest true --title "Probe export packages"
+            gh release edit "$TAG" --notes-file "$NOTES_FILE" --latest --title "Probe export packages"
           else
             gh release create "$TAG" "${ASSETS[@]}" \
               --title "Probe export packages" \
