@@ -1,35 +1,41 @@
 {
-  "updated_at": "2026-08-03T22:20:14.186270+08:00",
+  "updated_at": "2026-08-03T15:05:49.824665+00:00",
   "conclusion": "success",
   "subscription": {
-    "share_link_count": 1401,
-    "clash_proxy_count": 1401,
+    "share_link_count": 1239,
+    "clash_proxy_count": 1239,
     "by_protocol": {
-      "vless": 990,
-      "shadowsocks": 195,
-      "trojan": 41,
-      "vmess": 86,
-      "hysteria2": 89
+      "vless": 879,
+      "shadowsocks": 176,
+      "trojan": 32,
+      "vmess": 71,
+      "hysteria2": 81
     }
   },
   "singbox": {
-    "verified": 1401,
-    "public_unique": 28663,
-    "public_new_pass": 5732,
-    "public_fail": 22810,
-    "mode": "full_no_sample",
+    "verified": 1239,
+    "public_unique": 28638,
+    "public_new_pass": 1242,
+    "public_fail": 9107,
+    "mode": "accumulate_full_no_sample",
     "source": "full_public_live_verify",
-    "tested": 28542,
-    "elapsed_sec": 2891.0,
-    "workers": 32
+    "tested": 10349,
+    "elapsed_sec": 1132.1,
+    "workers": 32,
+    "accumulate": true,
+    "previous_public": 1401,
+    "retained_history_pass": 1070,
+    "new_pass": 172,
+    "history_dropped": 331,
+    "hist_only": 164,
+    "pool_size": 10349
   },
   "worker": {
     "workers": 32,
-    "elapsed_sec": 2891.0,
-    "tested": 28542,
-    "pass": 5732,
-    "fail": 22810,
+    "elapsed_sec": 1132.1,
+    "tested": 10349,
+    "pass": 1242,
+    "fail": 9107,
     "conclusion": "success"
-  },
-  "note": "re-export with hysteria2 share/clash support; no live re-probe"
+  }
 }
