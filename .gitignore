@@ -1,0 +1,26 @@
+# 运行产物（发到 Release，不进 git）
+dist/fsl64
+dist/fslyaml
+dist/fslsb
+dist/fslyamlcomp
+dist/manifest.json
+dist/*.txt
+dist/*.yaml
+dist/*.json
+!dist/README.md
+
+nodes/
+analysis/findings/_public_sub_nodes.json
+analysis/findings/_public_sub_nodes_*.json
+analysis/findings/_public_sub_*.json
+analysis/findings/_public_sub_*.md
+!analysis/findings/public_sub_fetch.py
+
+# 密钥 / 缓存
+**/*.conf
+sub/
+**/__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+*.log
