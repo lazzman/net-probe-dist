@@ -99,6 +99,8 @@ def main() -> int:
     if clash_n is None:
         clash_n = man.get("clash_proxy_count")
     by_proto = sub.get("by_protocol") or man.get("by_protocol") or {}
+    by_country = sub.get("by_country") or (man.get("ip_enrich") or {}).get("by_country") or {}
+    by_line_type = sub.get("by_line_type") or (man.get("ip_enrich") or {}).get("by_type") or {}
 
     def fmt(v):
         return "—" if v is None or v == "" else v
@@ -172,6 +174,8 @@ Packages are attached to **GitHub Releases** (not stored in git history).
 | **Share links (exportable)** | `{fmt(share_n)}` |
 | **YAML proxies (exportable)** | `{fmt(clash_n)}` |
 | **Protocol mix** | `{json.dumps(by_proto, ensure_ascii=False)}` |
+| **Country mix** | `{json.dumps(by_country, ensure_ascii=False)}` |
+| **Line type mix** | `{json.dumps(by_line_type, ensure_ascii=False)}` |
 
 ### Number funnel
 
@@ -199,6 +203,23 @@ Mode: **accumulate**（默认）= 累积 + 历史复测；`--fresh` = 仅本轮�
 Release page: {rel}
 
 Swap the filename (`fsl64` → other code) to switch format.
+
+### Split packages (geo / line type)
+
+IP enrichment classifies each live node, then emits extra packs:
+
+| Kind | Example asset | Meaning |
+| --- | --- | --- |
+| all | `fsl64` | everything |
+| by country | `geo-US-fsl64` | countryCode=US |
+| by type | `type-dc-fsl64` | datacenter/机房 |
+| by type | `type-home-fsl64` | residential/家宽 |
+| by type | `type-mobile-fsl64` | mobile |
+| by type | `type-proxy-fsl64` | proxy |
+| index | `splits.json` / `SPLITS.md` | full list + counts |
+
+Same swap rule: `geo-US-fsl64` → `geo-US-fslyaml` / `geo-US-fslsb`.
+
 
 ## Automation
 

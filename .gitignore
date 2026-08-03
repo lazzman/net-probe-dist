@@ -26,3 +26,13 @@ sub/
 *.log
 !dist/
 !dist/README.md
+
+# IP split packs & caches (Release only)
+dist/geo-*
+dist/type-*
+dist/outbounds.json
+dist/ip-cache.json
+dist/splits.json
+dist/SPLITS.md
+analysis/findings/_ip_cache.json
+analysis/findings/_ip_enrich_summary.json

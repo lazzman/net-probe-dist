@@ -31,6 +31,21 @@ def main() -> int:
     ws = args.workspace.resolve()
     py = sys.executable
 
+    # 尝试拉取上一轮 IP 缓存，加速归属地检测
+    try:
+        import os, urllib.request
+        repo = os.environ.get("GITHUB_REPOSITORY") or "lazzman/net-probe-dist"
+        cache_dir = ws / "analysis/findings"
+        cache_dir.mkdir(parents=True, exist_ok=True)
+        cache_path = cache_dir / "_ip_cache.json"
+        if not cache_path.exists() or cache_path.stat().st_size < 1000:
+            url = f"https://github.com/{repo}/releases/latest/download/ip-cache.json"
+            print(f"[*] seed ip cache from {url}", flush=True)
+            urllib.request.urlretrieve(url, cache_path)
+            print(f"    saved {cache_path} bytes={cache_path.stat().st_size}", flush=True)
+    except Exception as e:
+        print(f"[*] ip cache seed skipped: {e}", flush=True)
+
     # 1) 全量抓取
     run(
         [
@@ -91,6 +106,19 @@ def main() -> int:
     ob = ws / "nodes/sing-box/outbounds.json"
     if ob.exists():
         shutil.copy2(ob, dst / "outbounds.json")
+    # IP 拆分订阅（flat 文件名便于 Release latest/download）
+    for pat in ("geo-*-fsl64", "geo-*-fslyaml", "geo-*-fslsb", "geo-*-fslyamlcomp",
+                "type-*-fsl64", "type-*-fslyaml", "type-*-fslsb", "type-*-fslyamlcomp"):
+        for sp in src.glob(pat):
+            shutil.copy2(sp, dst / sp.name)
+    for name in ("splits.json", "SPLITS.md"):
+        sp = src / name
+        if sp.exists():
+            shutil.copy2(sp, dst / name)
+    # 可选：IP 缓存加速下轮（不含密钥）
+    ip_cache = ws / "analysis/findings/_ip_cache.json"
+    if ip_cache.exists():
+        shutil.copy2(ip_cache, dst / "ip-cache.json")
     # 公开仓禁止发布 wireguard 私钥 conf
     wg_dst = dst / "wireguard"
     if wg_dst.exists():
@@ -145,6 +173,12 @@ Swap the last path segment (`fsl64` → other code) to switch package type.
             "share_link_count": man.get("share_link_count"),
             "clash_proxy_count": man.get("clash_proxy_count"),
             "by_protocol": man.get("by_protocol"),
+            "by_country": (man.get("ip_enrich") or {}).get("by_country"),
+            "by_line_type": (man.get("ip_enrich") or {}).get("by_type"),
+            "splits": {
+                "geo": list(((man.get("splits") or {}).get("by_geo") or {}).keys()),
+                "type": list(((man.get("splits") or {}).get("by_type") or {}).keys()),
+            },
         },
         "singbox": {
             "verified": sb_man.get("singbox_outbounds_verified"),

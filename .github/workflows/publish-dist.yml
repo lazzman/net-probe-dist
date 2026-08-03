@@ -104,6 +104,11 @@ jobs:
           ASSETS=(dist/fsl64 dist/fslyaml dist/fslsb dist/fslyamlcomp)
           [ -f dist/manifest.json ] && ASSETS+=(dist/manifest.json)
           [ -f dist/outbounds.json ] && ASSETS+=(dist/outbounds.json)
+          [ -f dist/splits.json ] && ASSETS+=(dist/splits.json)
+          [ -f dist/SPLITS.md ] && ASSETS+=(dist/SPLITS.md)
+          [ -f dist/ip-cache.json ] && ASSETS+=(dist/ip-cache.json)
+          # 按国家/类型拆分的 flat 订阅
+          while IFS= read -r -d '' f; do ASSETS+=("$f"); done < <(find dist -maxdepth 1 -type f \( -name 'geo-*-fsl*' -o -name 'type-*-fsl*' \) -print0 2>/dev/null || true)
 
           # 固定 tag=dist，每次覆盖资源。
           # 注意：gh release edit 的 --latest 是布尔 flag，不能写成 --latest true。

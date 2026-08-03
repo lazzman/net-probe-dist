@@ -4,16 +4,16 @@
 [![release](https://img.shields.io/github/v/release/lazzman/net-probe-dist?style=flat-square&label=release)](https://github.com/lazzman/net-probe-dist/releases/latest)
 [![release-date](https://img.shields.io/github/release-date/lazzman/net-probe-dist?style=flat-square&label=released)](https://github.com/lazzman/net-probe-dist/releases/latest)
 [![downloads](https://img.shields.io/github/downloads/lazzman/net-probe-dist/total?style=flat-square&label=downloads)](https://github.com/lazzman/net-probe-dist/releases/latest)
-![updated: 2026-08-03 15:05:49](https://img.shields.io/badge/updated-2026--08--03_15%3A05%3A49-informational?logo=github&logoColor=white)
+![updated: 2026-08-04 00:48:52](https://img.shields.io/badge/updated-2026--08--04_00%3A48%3A52-informational?logo=github&logoColor=white)
 ![result: success](https://img.shields.io/badge/result-success-brightgreen?logo=githubactions&logoColor=white)
 ![workers: 32](https://img.shields.io/badge/workers-32-blueviolet)
-![elapsed: 1132.1s](https://img.shields.io/badge/elapsed-1132.1s-lightgrey)
-![profiles: 1239](https://img.shields.io/badge/profiles-1239-blue)
-![live_hits: 1242](https://img.shields.io/badge/live__hits-1242-brightgreen)
-![live_fail: 9107](https://img.shields.io/badge/live__fail-9107-orange)
-![kept: 1070](https://img.shields.io/badge/kept-1070-blue)
-![new: 172](https://img.shields.io/badge/new-172-success)
-![dropped: 331](https://img.shields.io/badge/dropped-331-important)
+![elapsed: n/a](https://img.shields.io/badge/elapsed-n%2Fa-lightgrey)
+![profiles: 1401](https://img.shields.io/badge/profiles-1401-blue)
+![live_hits: n/a](https://img.shields.io/badge/live__hits-n%2Fa-brightgreen)
+![live_fail: n/a](https://img.shields.io/badge/live__fail-n%2Fa-orange)
+![kept: n/a](https://img.shields.io/badge/kept-n%2Fa-blue)
+![new: n/a](https://img.shields.io/badge/new-n%2Fa-success)
+![dropped: n/a](https://img.shields.io/badge/dropped-n%2Fa-important)
 
 
 Lab CI utility: periodic **HTTP reachability probes** over public endpoint lists, then publish **encoded profile packages**.
@@ -24,22 +24,24 @@ Packages are attached to **GitHub Releases** (not stored in git history).
 
 | Field | Value |
 | --- | --- |
-| **Last update** | `2026-08-03T15:05:49.824665+00:00` |
+| **Last update** | `2026-08-04T00:48:52.125311+08:00` |
 | **Workflow result** | `success` |
 | **Workers** | `32` |
-| **Elapsed** | `1132.1s` |
+| **Elapsed** | `n/a` |
 | **Probe mode** | `accumulate_full_no_sample` |
-| **Candidates (unique)** | `28638` |
-| **Live PASS (pool hits)** | `1242` |
-| **Live FAIL** | `9107` |
-| **History retained** | `1070` |
-| **New PASS** | `172` |
-| **History dropped** | `331` |
-| **Previous public** | `1401` |
-| **Published profiles (deduped)** | `1239` |
-| **Share links (exportable)** | `1239` |
-| **YAML proxies (exportable)** | `1239` |
-| **Protocol mix** | `{"vless": 879, "shadowsocks": 176, "trojan": 32, "vmess": 71, "hysteria2": 81}` |
+| **Candidates (unique)** | `—` |
+| **Live PASS (pool hits)** | `—` |
+| **Live FAIL** | `—` |
+| **History retained** | `—` |
+| **New PASS** | `—` |
+| **History dropped** | `—` |
+| **Previous public** | `—` |
+| **Published profiles (deduped)** | `1401` |
+| **Share links (exportable)** | `1401` |
+| **YAML proxies (exportable)** | `1401` |
+| **Protocol mix** | `{"vless": 990, "shadowsocks": 195, "trojan": 41, "vmess": 86, "hysteria2": 89}` |
+| **Country mix** | `{"US": 209, "CA": 346, "DE": 90, "NL": 188, "ES": 12, "RU": 61, "FI": 38, "PL": 22, "FR": 36, "GB": 33, "IT": 24, "AT": 5, "LT": 3, "HK": 54, "CH": 26, "TW": 14, "TR": 13, "HU": 1, "SG": 18, "SE": 20, "KZ": 4, "JP": 15, "ID": 1, "EE": 3, "LV": 11, "SC": 7, "MD": 2, "IL": 2, "PH": 70, "CR": 2, "IE": 1, "AL": 1, "TH": 2, "KR": 26, "BG": 2, "ZA": 2, "NO": 2, "IN": 4, "MY": 4, "BH": 1, "RO": 5, "IS": 4, "SA": 2, "AE": 1, "PA": 1, "CN": 3, "ZZ": 2, "DK": 1, "BR": 2, "AU": 3, "KH": 1, "BE": 1}` |
+| **Line type mix** | `{"dc": 721, "home": 99, "proxy": 573, "mobile": 6, "unknown": 2}` |
 
 ### Number funnel
 
@@ -67,6 +69,23 @@ Mode: **accumulate**（默认）= 累积 + 历史复测；`--fresh` = 仅本轮�
 Release page: https://github.com/lazzman/net-probe-dist/releases/latest
 
 Swap the filename (`fsl64` → other code) to switch format.
+
+### Split packages (geo / line type)
+
+IP enrichment classifies each live node, then emits extra packs:
+
+| Kind | Example asset | Meaning |
+| --- | --- | --- |
+| all | `fsl64` | everything |
+| by country | `geo-US-fsl64` | countryCode=US |
+| by type | `type-dc-fsl64` | datacenter/机房 |
+| by type | `type-home-fsl64` | residential/家宽 |
+| by type | `type-mobile-fsl64` | mobile |
+| by type | `type-proxy-fsl64` | proxy |
+| index | `splits.json` / `SPLITS.md` | full list + counts |
+
+Same swap rule: `geo-US-fsl64` → `geo-US-fslyaml` / `geo-US-fslsb`.
+
 
 ## Automation
 

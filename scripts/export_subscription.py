@@ -7,8 +7,11 @@ from __future__ import annotations
 
 import argparse
 import base64
+import copy
 import json
+import re
 import sys
+import importlib.util
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from urllib.parse import quote, urlencode
@@ -459,13 +462,179 @@ def dump_val(v: object, indent: int = 0) -> str:
     return f"{sp}{yaml_escape(v)}"
 
 
+
+def _load_ip_enrich():
+    path = Path(__file__).resolve().parent / "ip_enrich.py"
+    spec = importlib.util.spec_from_file_location("ip_enrich", path)
+    mod = importlib.util.module_from_spec(spec)
+    assert spec and spec.loader
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def ip_meta(o: dict) -> dict:
+    return dict((o.get("_meta") or {}).get("ip") or {})
+
+
+def safe_code(s: str, default: str = "ZZ") -> str:
+    s = re.sub(r"[^A-Za-z0-9_-]+", "", str(s or "")).upper()
+    return s or default
+
+
+def labeled_outbound(o: dict) -> dict:
+    """导出用：节点名加上 [国家-类型] 前缀，便于客户端识别。"""
+    o2 = copy.deepcopy(o)
+    ip = ip_meta(o2)
+    cc = safe_code(ip.get("countryCode") or "ZZ", "ZZ")
+    lt = str(ip.get("line_type") or "unknown").lower()
+    base = str(o2.get("tag") or f"{o2.get('server')}:{o2.get('server_port')}")
+    if not re.match(r"^\[[A-Z0-9]{2,}-[a-z]+\]\s", base):
+        o2["tag"] = f"[{cc}-{lt}] {base}"
+    return o2
+
+
+def build_share_and_clash(obs: list[dict], now: str) -> dict:
+    """对一组 outbound 生成 share/clash/legacy/singbox 文本。"""
+    uris: list[str] = []
+    by: dict[str, list[str]] = {}
+    skipped: list[dict] = []
+    proxies: list[dict] = []
+    names: list[str] = []
+    legacy_proxies: list[dict] = []
+    legacy_names: list[str] = []
+
+    for o in obs:
+        if not isinstance(o, dict):
+            continue
+        if o.get("type") == "wireguard":
+            skipped.append({"tag": o.get("tag"), "reason": "wireguard skipped in share pack"})
+            continue
+        lo = labeled_outbound(o)
+        uri = to_uri(lo)
+        if not uri:
+            skipped.append({"tag": o.get("tag"), "type": o.get("type"), "reason": "uri build failed"})
+        else:
+            uris.append(uri)
+            by.setdefault(str(o.get("type") or "other"), []).append(uri)
+        p = clash_proxy(lo)
+        if p:
+            proxies.append(p)
+            names.append(p["name"])
+        lp = clash_proxy_legacy(lo)
+        if lp:
+            legacy_proxies.append(lp)
+            legacy_names.append(lp["name"])
+
+    raw = ("\n".join(uris) + "\n") if uris else ""
+    fsl64 = base64.b64encode(raw.encode()).decode() + "\n" if raw else ""
+    if not names:
+        names = ["DIRECT"]
+    clash = {
+        "mixed-port": 7890,
+        "allow-lan": False,
+        "mode": "rule",
+        "log-level": "info",
+        "proxies": proxies,
+        "proxy-groups": [
+            {"name": "PROXY", "type": "select", "proxies": ["auto", *names, "DIRECT"]},
+            {
+                "name": "auto",
+                "type": "url-test",
+                "proxies": names if proxies else ["DIRECT"],
+                "url": "https://www.gstatic.com/generate_204",
+                "interval": 300,
+            },
+        ],
+        "rules": ["MATCH,PROXY"],
+    }
+    fslyaml = (
+        f"# Clash Meta\n# generated_at: {now}\n# count: {len(proxies)}\n"
+        + dump_val(clash)
+        + "\n"
+    )
+    if not legacy_names:
+        legacy_names = ["DIRECT"]
+    clash_legacy = {
+        "port": 7890,
+        "socks-port": 7891,
+        "allow-lan": False,
+        "mode": "rule",
+        "log-level": "info",
+        "proxies": legacy_proxies,
+        "proxy-groups": [
+            {"name": "PROXY", "type": "select", "proxies": ["auto", *legacy_names, "DIRECT"]},
+            {
+                "name": "auto",
+                "type": "url-test",
+                "proxies": legacy_names if legacy_proxies else ["DIRECT"],
+                "url": "http://www.gstatic.com/generate_204",
+                "interval": 300,
+            },
+        ],
+        "rules": ["MATCH,PROXY"],
+    }
+    fslyamlcomp = (
+        f"# Clash legacy\n# generated_at: {now}\n# count: {len(legacy_proxies)}\n"
+        + dump_val(clash_legacy)
+        + "\n"
+    )
+    labeled = [labeled_outbound(o) for o in obs if isinstance(o, dict) and o.get("type") != "wireguard"]
+    fslsb = json.dumps(build_singbox_subscription(labeled), ensure_ascii=False, indent=2) + "\n"
+    return {
+        "count": len(obs),
+        "share_link_count": len(uris),
+        "clash_proxy_count": len(proxies),
+        "by_protocol": {k: len(v) for k, v in by.items()},
+        "skipped": skipped,
+        "raw": raw,
+        "fsl64": fsl64,
+        "fslyaml": fslyaml,
+        "fslyamlcomp": fslyamlcomp,
+        "fslsb": fslsb,
+        "uris": uris,
+        "proxies": proxies,
+        "legacy_proxies": legacy_proxies,
+    }
+
+
+def write_pack_files(dir_path: Path, pack: dict) -> None:
+    dir_path.mkdir(parents=True, exist_ok=True)
+    (dir_path / "fsl64").write_text(pack["fsl64"], encoding="utf-8")
+    (dir_path / "fslyaml").write_text(pack["fslyaml"], encoding="utf-8")
+    (dir_path / "fslsb").write_text(pack["fslsb"], encoding="utf-8")
+    (dir_path / "fslyamlcomp").write_text(pack["fslyamlcomp"], encoding="utf-8")
+
+
+def group_by_ip(obs: list[dict]) -> tuple[dict[str, list], dict[str, list]]:
+    by_cc: dict[str, list] = {}
+    by_type: dict[str, list] = {}
+    for o in obs:
+        if not isinstance(o, dict) or o.get("type") == "wireguard":
+            continue
+        ip = ip_meta(o)
+        cc = safe_code(ip.get("countryCode") or "ZZ", "ZZ")
+        lt = re.sub(r"[^a-z0-9_-]+", "", str(ip.get("line_type") or "unknown").lower()) or "unknown"
+        by_cc.setdefault(cc, []).append(o)
+        by_type.setdefault(lt, []).append(o)
+    return by_cc, by_type
+
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="导出订阅文件（分享链/base64/Clash/WG），非 sing-box config")
     ap.add_argument("--workspace", type=Path, default=ROOT_DEFAULT)
     ap.add_argument("--out-dir", type=Path, default=None)
     ap.add_argument("--no-wireguard-files", action="store_true", help="不写出含私钥的 wireguard/*.conf（公开仓推荐）")
     ap.add_argument("--strip-wireguard-from-singbox", action="store_true", help="fslsb/config 中排除 wireguard 私钥节点")
+    ap.add_argument("--enrich-ip", action="store_true", default=True, help="导出前做 IP 归属地/类型检测（默认开）")
+    ap.add_argument("--no-enrich-ip", action="store_true", help="跳过 IP 检测")
+    ap.add_argument("--split-ip", action="store_true", default=True, help="按归属地/类型拆分订阅（默认开）")
+    ap.add_argument("--no-split-ip", action="store_true", help="不拆分订阅")
     args = ap.parse_args()
+    if args.no_enrich_ip:
+        args.enrich_ip = False
+    if args.no_split_ip:
+        args.split_ip = False
     ws = args.workspace.resolve()
     out = (args.out_dir or (ws / "nodes" / "subscription")).resolve()
     out.mkdir(parents=True, exist_ok=True)
@@ -498,6 +667,32 @@ def main() -> int:
                 }
             )
 
+    # IP 归属地 / 线路类型 enrichment
+    ip_stats = {}
+    if args.enrich_ip:
+        try:
+            ipmod = _load_ip_enrich()
+            cache_path = ws / "analysis/findings/_ip_cache.json"
+            cache = {}
+            if cache_path.exists():
+                try:
+                    cache = json.loads(cache_path.read_text(encoding="utf-8"))
+                except Exception:
+                    cache = {}
+            obs, enrich_result = ipmod.enrich_outbounds(obs, cache, resolve_workers=32, force=False)
+            cache_path.parent.mkdir(parents=True, exist_ok=True)
+            cache_path.write_text(json.dumps(enrich_result["cache"], ensure_ascii=False) + "\n", encoding="utf-8")
+            ip_stats = enrich_result.get("stats") or {}
+            (ws / "analysis/findings/_ip_enrich_summary.json").write_text(
+                json.dumps(ip_stats, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+            )
+            # 回写 outbounds（带 _meta.ip），供累积与审计
+            src.write_text(json.dumps(obs, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            print(json.dumps({"ip_enrich": ip_stats}, ensure_ascii=False), flush=True)
+        except Exception as e:
+            print(f"[!] ip enrich failed: {e}", flush=True)
+            ip_stats = {"error": str(e)}
+
     uris: list[str] = []
     by: dict[str, list[str]] = {}
     skipped: list[dict] = []
@@ -505,7 +700,8 @@ def main() -> int:
         if o.get("type") == "wireguard":
             skipped.append({"tag": o.get("tag"), "reason": "wireguard→conf/clash，不进通用分享链"})
             continue
-        uri = to_uri(o)
+        lo = labeled_outbound(o)
+        uri = to_uri(lo)
         if not uri:
             reason = "uri build failed (%s)" % (o.get("type") or "unknown")
             skipped.append({"tag": o.get("tag"), "type": o.get("type"), "reason": reason})
@@ -525,7 +721,7 @@ def main() -> int:
     proxies = []
     names = []
     for o in obs:
-        p = clash_proxy(o)
+        p = clash_proxy(labeled_outbound(o))
         if not p:
             continue
         proxies.append(p)
@@ -571,7 +767,7 @@ def main() -> int:
     legacy_proxies: list[dict] = []
     legacy_names: list[str] = []
     for o in obs:
-        lp = clash_proxy_legacy(o)
+        lp = clash_proxy_legacy(labeled_outbound(o))
         if not lp:
             continue
         legacy_proxies.append(lp)
@@ -613,11 +809,12 @@ def main() -> int:
                 sb_cfg = cand
         except Exception:
             sb_cfg = None
+    labeled_obs = [labeled_outbound(o) for o in obs if isinstance(o, dict)]
     if sb_cfg is None:
-        sb_cfg = build_singbox_subscription(obs)
+        sb_cfg = build_singbox_subscription(labeled_obs)
     elif args.strip_wireguard_from_singbox:
         # 即使读了 config 也要剥 WG
-        sb_cfg = build_singbox_subscription(obs)
+        sb_cfg = build_singbox_subscription(labeled_obs)
     fslsb_body = json.dumps(sb_cfg, ensure_ascii=False, indent=2) + "\n"
     (out / "fslsb").write_text(fslsb_body, encoding="utf-8")
     (out / "verified_singbox.json").write_text(fslsb_body, encoding="utf-8")
@@ -651,6 +848,82 @@ def main() -> int:
         (wg_dir / f"{safe}.conf").write_text(conf, encoding="utf-8")
         wg_count += 1
 
+    # ---- 按归属地 / 线路类型拆分订阅 ----
+    splits_index = {"by_geo": {}, "by_type": {}, "generated_at": now}
+    flat_assets: list[str] = []
+    if args.split_ip:
+        by_cc, by_lt = group_by_ip(obs)
+        geo_root = out / "by-geo"
+        type_root = out / "by-type"
+        # clean old dirs lightly
+        for root in (geo_root, type_root):
+            root.mkdir(parents=True, exist_ok=True)
+
+        for cc, items in sorted(by_cc.items(), key=lambda x: (-len(x[1]), x[0])):
+            pack = build_share_and_clash(items, now)
+            sub = geo_root / cc
+            write_pack_files(sub, pack)
+            # flat release-friendly aliases in out/: geo-US-fsl64
+            for fmt in ("fsl64", "fslyaml", "fslsb", "fslyamlcomp"):
+                flat = out / f"geo-{cc}-{fmt}"
+                flat.write_text(pack[fmt], encoding="utf-8")
+                flat_assets.append(flat.name)
+            splits_index["by_geo"][cc] = {
+                "count": pack["share_link_count"],
+                "nodes": pack["count"],
+                "by_protocol": pack["by_protocol"],
+                "files": {
+                    "fsl64": f"geo-{cc}-fsl64",
+                    "fslyaml": f"geo-{cc}-fslyaml",
+                    "fslsb": f"geo-{cc}-fslsb",
+                    "fslyamlcomp": f"geo-{cc}-fslyamlcomp",
+                    "dir": f"by-geo/{cc}",
+                },
+            }
+
+        for lt, items in sorted(by_lt.items(), key=lambda x: (-len(x[1]), x[0])):
+            pack = build_share_and_clash(items, now)
+            sub = type_root / lt
+            write_pack_files(sub, pack)
+            for fmt in ("fsl64", "fslyaml", "fslsb", "fslyamlcomp"):
+                flat = out / f"type-{lt}-{fmt}"
+                flat.write_text(pack[fmt], encoding="utf-8")
+                flat_assets.append(flat.name)
+            splits_index["by_type"][lt] = {
+                "count": pack["share_link_count"],
+                "nodes": pack["count"],
+                "label": (items and ip_meta(items[0]).get("line_type_zh")) or lt,
+                "by_protocol": pack["by_protocol"],
+                "files": {
+                    "fsl64": f"type-{lt}-fsl64",
+                    "fslyaml": f"type-{lt}-fslyaml",
+                    "fslsb": f"type-{lt}-fslsb",
+                    "fslyamlcomp": f"type-{lt}-fslyamlcomp",
+                    "dir": f"by-type/{lt}",
+                },
+            }
+
+        (out / "splits.json").write_text(
+            json.dumps(splits_index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+        )
+        # 便于人类浏览
+        lines = [
+            f"# Subscription splits",
+            f"",
+            f"generated_at: {now}",
+            f"",
+            f"## by geo (countryCode)",
+        ]
+        for cc, meta in sorted(splits_index["by_geo"].items(), key=lambda x: -x[1]["count"]):
+            lines.append(f"- `{cc}`: {meta['count']} links → `geo-{cc}-fsl64`")
+        lines.append("")
+        lines.append("## by type")
+        for lt, meta in sorted(splits_index["by_type"].items(), key=lambda x: -x[1]["count"]):
+            lines.append(f"- `{lt}` ({meta.get('label')}): {meta['count']} links → `type-{lt}-fsl64`")
+        lines.append("")
+        lines.append("URL tip: replace `fsl64` with `geo-US-fsl64` / `type-dc-fsl64` / `fslyaml` variants.")
+        (out / "SPLITS.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+
     man = {
         "generated_at": now,
         "source": "nodes/sing-box/outbounds.json (仅 live PASS)",
@@ -683,6 +956,14 @@ def main() -> int:
             "wireguard": "wireguard/*.conf",
         },
         "legacy_clash_proxy_count": len(legacy_proxies),
+        "ip_enrich": ip_stats,
+        "splits": splits_index if args.split_ip else {},
+        "split_assets": flat_assets if args.split_ip else [],
+        "usage_splits": {
+            "by_geo": "将 fsl64 换成 geo-<CC>-fsl64，如 geo-US-fsl64；再换成 geo-US-fslyaml 即 Clash",
+            "by_type": "将 fsl64 换成 type-<kind>-fsl64，kind=dc|home|mobile|proxy|unknown",
+            "types_zh": {"dc": "机房", "home": "家宽", "mobile": "移动", "proxy": "代理", "unknown": "未知"},
+        },
     }
     (out / "manifest.json").write_text(json.dumps(man, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (out / "README.md").write_text(
