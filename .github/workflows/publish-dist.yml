@@ -89,12 +89,7 @@ jobs:
               echo
               echo "### manifest (summary)"
               echo '```json'
-              python3 - <<'PY'
-          import json
-          keys = ("generated_at", "share_link_count", "clash_proxy_count", "by_protocol", "formats")
-          m = json.load(open("dist/manifest.json", encoding="utf-8"))
-          print(json.dumps({k: m.get(k) for k in keys}, ensure_ascii=False, indent=2))
-          PY
+              python3 -c 'import json; m=json.load(open("dist/manifest.json", encoding="utf-8")); keys=("generated_at","share_link_count","clash_proxy_count","by_protocol","formats"); print(json.dumps({k:m.get(k) for k in keys}, ensure_ascii=False, indent=2))'
               echo '```'
             fi
             echo
