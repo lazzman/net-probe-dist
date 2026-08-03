@@ -4,13 +4,13 @@
 [![release](https://img.shields.io/github/v/release/lazzman/net-probe-dist?style=flat-square&label=release)](https://github.com/lazzman/net-probe-dist/releases/latest)
 [![release-date](https://img.shields.io/github/release-date/lazzman/net-probe-dist?style=flat-square&label=released)](https://github.com/lazzman/net-probe-dist/releases/latest)
 [![downloads](https://img.shields.io/github/downloads/lazzman/net-probe-dist/total?style=flat-square&label=downloads)](https://github.com/lazzman/net-probe-dist/releases/latest)
-![updated: 2026-08-03 18:15:49](https://img.shields.io/badge/updated-2026--08--03_18%3A15%3A49-informational?logo=github&logoColor=white)
+![updated: 2026-08-03 11:39:53](https://img.shields.io/badge/updated-2026--08--03_11%3A39%3A53-informational?logo=github&logoColor=white)
 ![result: success](https://img.shields.io/badge/result-success-brightgreen?logo=githubactions&logoColor=white)
 ![workers: 32](https://img.shields.io/badge/workers-32-blueviolet)
-![elapsed: 2890.8s](https://img.shields.io/badge/elapsed-2890.8s-lightgrey)
-![profiles: 1407](https://img.shields.io/badge/profiles-1407-blue)
-![live_pass: 5826](https://img.shields.io/badge/live__pass-5826-brightgreen)
-![live_fail: 22642](https://img.shields.io/badge/live__fail-22642-orange)
+![elapsed: 2891.0s](https://img.shields.io/badge/elapsed-2891.0s-lightgrey)
+![profiles: 1401](https://img.shields.io/badge/profiles-1401-blue)
+![live_pass: 5732](https://img.shields.io/badge/live__pass-5732-brightgreen)
+![live_fail: 22810](https://img.shields.io/badge/live__fail-22810-orange)
 
 
 Lab CI utility: periodic **HTTP reachability probes** over public endpoint lists, then publish **encoded profile packages**.
@@ -21,18 +21,18 @@ Packages are attached to **GitHub Releases** (not stored in git history).
 
 | Field | Value |
 | --- | --- |
-| **Last update** | `2026-08-03T18:15:49.370844+08:00` |
+| **Last update** | `2026-08-03T11:39:53.781765+00:00` |
 | **Workflow result** | `success` |
 | **Workers** | `32` |
-| **Elapsed** | `2890.8s` |
+| **Elapsed** | `2891.0s` |
 | **Probe mode** | `full_no_sample` |
-| **Candidates (unique)** | `28578` |
-| **Live PASS (raw)** | `5826` |
-| **Live FAIL** | `22642` |
-| **Published profiles** | `1407` |
-| **Share links** | `1314` |
-| **YAML proxies** | `1314` |
-| **Protocol mix** | `{"vless": 1004, "shadowsocks": 187, "trojan": 38, "vmess": 85}` |
+| **Candidates (unique)** | `28663` |
+| **Live PASS (raw)** | `5732` |
+| **Live FAIL** | `22810` |
+| **Published profiles** | `1401` |
+| **Share links** | `1312` |
+| **YAML proxies** | `1312` |
+| **Protocol mix** | `{"vless": 990, "shadowsocks": 195, "trojan": 41, "vmess": 86}` |
 
 ## Latest packages
 

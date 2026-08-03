@@ -1,35 +1,33 @@
 {
-  "updated_at": "2026-08-03T18:15:49.370844+08:00",
+  "updated_at": "2026-08-03T11:39:53.781765+00:00",
   "conclusion": "success",
-  "note": "recovered after publish diagnostics field failure; assets uploaded in run 30801453933",
   "subscription": {
-    "share_link_count": 1314,
-    "clash_proxy_count": 1314,
+    "share_link_count": 1312,
+    "clash_proxy_count": 1312,
     "by_protocol": {
-      "vless": 1004,
-      "shadowsocks": 187,
-      "trojan": 38,
-      "vmess": 85
+      "vless": 990,
+      "shadowsocks": 195,
+      "trojan": 41,
+      "vmess": 86
     }
   },
   "singbox": {
-    "verified": 1407,
-    "public_unique": 28578,
-    "public_new_pass": 5826,
-    "public_fail": 22642,
+    "verified": 1401,
+    "public_unique": 28663,
+    "public_new_pass": 5732,
+    "public_fail": 22810,
     "mode": "full_no_sample",
     "source": "full_public_live_verify",
-    "tested": 28468,
-    "elapsed_sec": 2890.8,
+    "tested": 28542,
+    "elapsed_sec": 2891.0,
     "workers": 32
   },
   "worker": {
     "workers": 32,
-    "elapsed_sec": 2890.8,
-    "tested": 28468,
-    "pass": 5826,
-    "fail": 22642,
-    "conclusion": "success",
-    "run_id": "30801453933"
+    "elapsed_sec": 2891.0,
+    "tested": 28542,
+    "pass": 5732,
+    "fail": 22810,
+    "conclusion": "success"
   }
 }
