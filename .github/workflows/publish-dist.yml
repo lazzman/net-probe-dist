@@ -112,26 +112,32 @@ jobs:
           fi
           echo "Release published: https://github.com/${GITHUB_REPOSITORY}/releases/tag/${TAG}"
 
-      - name: Commit lightweight STATUS only (no dist binaries)
+      - name: Refresh README status + commit pointers
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # README 链接是稳定 latest/download，一般无需每次改；只提交 STATUS.json
-          if [ -f STATUS.json ]; then
-            git add STATUS.json
-          fi
-          # 确保 dist 大文件未被跟踪
-          git rm -r --cached --ignore-unmatch dist/fsl64 dist/fslyaml dist/fslsb dist/fslyamlcomp dist/manifest.json nodes 2>/dev/null || true
+          # 用本轮 STATUS / manifest 重写 README（更新时间 + worker 状态）
+          python3 scripts/render_readme.py --workspace .
 
+          # 只提交轻量指针文件（不提交 dist 大包）
+          git add README.md dist/README.md STATUS.json 2>/dev/null || true
+          git rm -r --cached --ignore-unmatch \
+            dist/fsl64 dist/fslyaml dist/fslsb dist/fslyamlcomp dist/manifest.json \
+            nodes analysis/findings/_public_sub_nodes.json 2>/dev/null || true
+
+          echo "==== staged ===="
+          git diff --cached --stat || true
           if git diff --cached --quiet; then
-            echo "No lightweight changes to commit"
+            echo "No README/STATUS changes"
             git status -sb || true
             exit 0
           fi
           TS="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          git commit -m "chore(status): probe export ${TS}"
+          git commit -m "chore(status): update README timestamp ${TS}"
           git push origin HEAD:main
+          echo "Pushed $(git rev-parse --short HEAD)"

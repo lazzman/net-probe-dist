@@ -1,4 +1,12 @@
 {
-  "updated_at": null,
-  "note": "written by publish-dist workflow"
+  "updated_at": "2026-08-03T14:41:41.686442+08:00",
+  "note": "written by publish-dist workflow",
+  "worker": {
+    "workers": 24,
+    "elapsed_sec": null,
+    "tested": null,
+    "pass": null,
+    "fail": null,
+    "conclusion": "success"
+  }
 }

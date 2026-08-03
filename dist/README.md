@@ -1,6 +1,9 @@
 # dist (build output)
 
-Generated locally / on Actions runner. **Published to GitHub Release**, not committed.
+Generated on the Actions runner / locally. **Published to GitHub Release**, not committed.
+
+**Last update:** `2026-08-03T14:41:41.686442+08:00`  
+**Workers:** `24` · **Result:** `success`
 
 Latest downloads:
 

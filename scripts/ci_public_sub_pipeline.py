@@ -134,6 +134,7 @@ Swap the last path segment (`fsl64` → other code) to switch package type.
         sb_man = json.loads(smp.read_text(encoding="utf-8"))
     status = {
         "updated_at": now,
+        "conclusion": "success",
         "subscription": {
             "share_link_count": man.get("share_link_count"),
             "clash_proxy_count": man.get("clash_proxy_count"),
@@ -146,9 +147,24 @@ Swap the last path segment (`fsl64` → other code) to switch package type.
             "public_fail": sb_man.get("public_fail"),
             "mode": sb_man.get("mode"),
             "source": sb_man.get("source"),
+            "tested": sb_man.get("tested"),
+            "elapsed_sec": sb_man.get("elapsed_sec"),
+            "workers": sb_man.get("workers"),
+        },
+        "worker": {
+            "workers": sb_man.get("workers") if sb_man.get("workers") is not None else args.workers,
+            "elapsed_sec": sb_man.get("elapsed_sec"),
+            "tested": sb_man.get("tested"),
+            "pass": sb_man.get("public_new_pass"),
+            "fail": sb_man.get("public_fail"),
+            "conclusion": "success",
         },
     }
     (ws / "STATUS.json").write_text(json.dumps(status, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    # 刷新 README 更新时间与 worker 状态
+    render = ws / "scripts" / "render_readme.py"
+    if render.exists():
+        subprocess.run([py, str(render), "--workspace", str(ws)], check=False)
     print(json.dumps(status, ensure_ascii=False, indent=2), flush=True)
     return 0
 
