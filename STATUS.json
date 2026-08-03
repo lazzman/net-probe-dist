@@ -1,12 +1,35 @@
 {
-  "updated_at": "2026-08-03T14:41:41.686442+08:00",
-  "note": "written by publish-dist workflow",
+  "updated_at": "2026-08-03T15:24:27+08:00",
+  "conclusion": "success",
+  "note": "recovered from Actions build 30790795370 (assets uploaded; release notes edit failed)",
+  "subscription": {
+    "share_link_count": 1609,
+    "clash_proxy_count": 1609,
+    "by_protocol": {
+      "vless": 1261,
+      "shadowsocks": 212,
+      "trojan": 47,
+      "vmess": 89
+    }
+  },
+  "singbox": {
+    "verified": 1710,
+    "public_unique": 28772,
+    "public_new_pass": 6523,
+    "public_fail": 22137,
+    "mode": "full_no_sample",
+    "source": "full_public_live_verify",
+    "tested": 28660,
+    "elapsed_sec": 2825,
+    "workers": 32
+  },
   "worker": {
-    "workers": 24,
-    "elapsed_sec": null,
-    "tested": null,
-    "pass": null,
-    "fail": null,
-    "conclusion": "success"
+    "workers": 32,
+    "elapsed_sec": 2825,
+    "tested": 28660,
+    "pass": 6523,
+    "fail": 22137,
+    "conclusion": "success",
+    "run_id": "30790795370"
   }
 }
