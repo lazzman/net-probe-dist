@@ -11,7 +11,7 @@ Packages are attached to **GitHub Releases** (not stored in git history).
 | **Last update** | `2026-08-03T14:41:41.686442+08:00` |
 | **Workflow result** | `success` |
 | **Workers** | `24` |
-| **Elapsed** | `—s` |
+| **Elapsed** | `—` |
 | **Probe mode** | `full_no_sample` |
 | **Candidates (unique)** | `—` |
 | **Live PASS (raw)** | `—` |

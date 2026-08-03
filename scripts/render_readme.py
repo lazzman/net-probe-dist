@@ -81,7 +81,7 @@ Packages are attached to **GitHub Releases** (not stored in git history).
 | **Last update** | `{updated_display}` |
 | **Workflow result** | `{fmt(conclusion)}` |
 | **Workers** | `{fmt(workers)}` |
-| **Elapsed** | `{fmt(elapsed)}s` |
+| **Elapsed** | `{str(elapsed) + "s" if elapsed is not None else "—"}` |
 | **Probe mode** | `{fmt(mode)}` |
 | **Candidates (unique)** | `{fmt(public_unique)}` |
 | **Live PASS (raw)** | `{fmt(public_pass)}` |
