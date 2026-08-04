@@ -71,6 +71,8 @@ Release page: https://github.com/lazzman/net-probe-dist/releases/latest
 
 Swap the filename (`fsl64` → other code) to switch format.
 
+**节点名前缀**：已自动加上 `[国家-类型]` 标识（例如 `[US-dc]`、`[HK-home]`），方便客户端或手动归类。
+
 ### Split packages (geo / line type)
 
 IP enrichment classifies each live node, then emits extra packs:
