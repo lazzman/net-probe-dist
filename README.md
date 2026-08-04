@@ -4,16 +4,16 @@
 [![release](https://img.shields.io/github/v/release/lazzman/net-probe-dist?style=flat-square&label=release)](https://github.com/lazzman/net-probe-dist/releases/latest)
 [![release-date](https://img.shields.io/github/release-date/lazzman/net-probe-dist?style=flat-square&label=released)](https://github.com/lazzman/net-probe-dist/releases/latest)
 [![downloads](https://img.shields.io/github/downloads/lazzman/net-probe-dist/total?style=flat-square&label=downloads)](https://github.com/lazzman/net-probe-dist/releases/latest)
-![updated: 2026-08-04 17:01:06](https://img.shields.io/badge/updated-2026--08--04_17%3A01%3A06-informational?logo=github&logoColor=white)
+![updated: 2026-08-04 22:36:19](https://img.shields.io/badge/updated-2026--08--04_22%3A36%3A19-informational?logo=github&logoColor=white)
 ![result: success](https://img.shields.io/badge/result-success-brightgreen?logo=githubactions&logoColor=white)
 ![workers: 24](https://img.shields.io/badge/workers-24-blueviolet)
-![elapsed: 1502.9s](https://img.shields.io/badge/elapsed-1502.9s-lightgrey)
-![profiles: 1572](https://img.shields.io/badge/profiles-1572-blue)
-![live_hits: 1582](https://img.shields.io/badge/live__hits-1582-brightgreen)
-![live_fail: 9025](https://img.shields.io/badge/live__fail-9025-orange)
-![kept: 1199](https://img.shields.io/badge/kept-1199-blue)
-![new: 383](https://img.shields.io/badge/new-383-success)
-![dropped: 347](https://img.shields.io/badge/dropped-347-important)
+![elapsed: 1554.2s](https://img.shields.io/badge/elapsed-1554.2s-lightgrey)
+![profiles: 1176](https://img.shields.io/badge/profiles-1176-blue)
+![live_hits: 1183](https://img.shields.io/badge/live__hits-1183-brightgreen)
+![live_fail: 9393](https://img.shields.io/badge/live__fail-9393-orange)
+![kept: 820](https://img.shields.io/badge/kept-820-blue)
+![new: 363](https://img.shields.io/badge/new-363-success)
+![dropped: 485](https://img.shields.io/badge/dropped-485-important)
 
 
 Lab CI utility: periodic **HTTP reachability probes** over public endpoint lists, then publish **encoded profile packages**.
@@ -24,25 +24,25 @@ Packages are attached to **GitHub Releases** (not stored in git history).
 
 | Field | Value |
 | --- | --- |
-| **Last update** | `2026-08-04 17:01:06 CST` |
+| **Last update** | `2026-08-04 22:36:19 CST` |
 | **Timezone** | `Asia/Shanghai (UTC+8)` |
 | **Workflow result** | `success` |
 | **Workers** | `24` |
-| **Elapsed** | `1502.9s` |
+| **Elapsed** | `1554.2s` |
 | **Probe mode** | `accumulate_full_no_sample` |
-| **Candidates (unique)** | `28053` |
-| **Live PASS (pool hits)** | `1582` |
-| **Live FAIL** | `9025` |
-| **History retained** | `1199` |
-| **New PASS** | `383` |
-| **History dropped** | `347` |
-| **Previous public** | `1546` |
-| **Published profiles (deduped)** | `1572` |
-| **Share links (exportable)** | `1305` |
-| **YAML proxies (exportable)** | `1305` |
-| **Protocol mix** | `{"vless": 911, "shadowsocks": 176, "trojan": 91, "vmess": 60, "hysteria2": 67}` |
-| **Country mix** | `{"US": 175, "DE": 67, "CA": 403, "NL": 181, "RU": 45, "FI": 24, "GB": 20, "IT": 15, "FR": 35, "AT": 5, "PL": 16, "BE": 2, "CH": 1, "HK": 33, "TW": 11, "HU": 1, "SG": 23, "SE": 19, "PA": 1, "ES": 8, "KZ": 3, "JP": 48, "ID": 1, "CO": 18, "TR": 6, "SC": 7, "MD": 1, "EE": 3, "LV": 7, "PH": 43, "LT": 1, "CR": 2, "IN": 4, "BG": 4, "IE": 1, "ZA": 2, "NO": 1, "KR": 39, "MY": 1, "BH": 1, "CN": 2, "RO": 3, "IS": 4, "AZ": 1, "AE": 1, "AU": 4, "BR": 5, "KH": 1, "SA": 3, "TH": 1, "DK": 2, "IL": 1, "IR": 1}` |
-| **Line type mix** | `{"dc": 763, "home": 68, "proxy": 471, "mobile": 5}` |
+| **Candidates (unique)** | `28291` |
+| **Live PASS (pool hits)** | `1183` |
+| **Live FAIL** | `9393` |
+| **History retained** | `820` |
+| **New PASS** | `363` |
+| **History dropped** | `485` |
+| **Previous public** | `1305` |
+| **Published profiles (deduped)** | `1176` |
+| **Share links (exportable)** | `951` |
+| **YAML proxies (exportable)** | `951` |
+| **Protocol mix** | `{"vless": 594, "shadowsocks": 160, "vmess": 57, "trojan": 80, "hysteria2": 60}` |
+| **Country mix** | `{"US": 143, "CA": 184, "RU": 59, "NL": 145, "FI": 23, "EE": 2, "HK": 29, "DE": 70, "GB": 20, "IT": 17, "FR": 34, "ZZ": 2, "AT": 4, "PL": 15, "CH": 1, "TW": 10, "HU": 1, "SG": 21, "PA": 1, "SE": 19, "KZ": 6, "JP": 48, "ID": 1, "MD": 1, "IR": 2, "SC": 2, "SA": 3, "PH": 16, "LT": 2, "CR": 1, "IE": 2, "IN": 4, "RO": 3, "AU": 3, "ZA": 2, "TH": 2, "ES": 5, "CO": 1, "TR": 6, "BG": 2, "KR": 26, "BH": 1, "CN": 2, "LV": 4, "BR": 2, "KH": 1, "DK": 3, "IL": 1, "AE": 1}` |
+| **Line type mix** | `{"dc": 473, "proxy": 432, "unknown": 2, "home": 40, "mobile": 6}` |
 
 ### Number funnel
 
@@ -70,8 +70,6 @@ Mode: **accumulate**（默认）= 累积 + 历史复测；`--fresh` = 仅本轮�
 Release page: https://github.com/lazzman/net-probe-dist/releases/latest
 
 Swap the filename (`fsl64` → other code) to switch format.
-
-**节点名前缀**：已自动加上 `[国家-类型]` 标识（例如 `[US-dc]`、`[HK-home]`），方便客户端或手动归类。
 
 ### Split packages (geo / line type)
 
