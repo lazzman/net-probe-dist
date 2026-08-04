@@ -70,12 +70,15 @@ jobs:
         run: |
           set -euo pipefail
           TAG="dist"
-          TS="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          # 统一上海时间展示
+          TS="$(TZ=Asia/Shanghai date +%Y-%m-%dT%H:%M:%S%z)"
+          TS_HUMAN="$(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M:%S CST')"
           NOTES_FILE="$(mktemp)"
           {
             echo "Automated reachability probe export packages."
             echo
-            echo "- Updated (UTC): **${TS}**"
+            echo "- Updated (Asia/Shanghai): **${TS_HUMAN}**"
+            echo "- Updated (ISO+08): `${TS}`"
             echo "- Tag: \`${TAG}\` (assets overwritten each run)"
             echo "- Run: ${{ github.run_id }}"
             echo
@@ -154,7 +157,7 @@ jobs:
             exit 0
           fi
 
-          TS="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          TS="$(TZ=Asia/Shanghai date +%Y-%m-%dT%H:%M:%S%z)"
           RUN_ID="${{ github.run_id }}"
           git commit -m "chore(status): update README timestamp ${TS} (run ${RUN_ID})"
 

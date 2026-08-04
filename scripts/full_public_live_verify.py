@@ -12,6 +12,10 @@
 """
 from __future__ import annotations
 
+import sys
+from pathlib import Path as _PathForSys
+sys.path.insert(0, str(_PathForSys(__file__).resolve().parent))
+
 import argparse
 import importlib.util
 import json
@@ -20,9 +24,17 @@ import sys
 import time
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Any
+
+
+def _now_sh() -> str:
+    try:
+        from timeutil import now_iso
+        return now_iso()
+    except Exception:
+        return datetime.now(timezone(timedelta(hours=8))).isoformat(timespec="seconds")
 
 
 def load(path: Path, name: str):
@@ -305,7 +317,7 @@ def main() -> int:
             tag = ob.get("tag")
             meta = dict(ob.get("_meta") or {})
             meta["singbox_validation"] = info
-            meta["verified_at"] = datetime.now().astimezone().isoformat()
+            meta["verified_at"] = _now_sh()
             ob2 = dict(ob)
             ob2["_meta"] = meta
             if ok:
@@ -342,7 +354,7 @@ def main() -> int:
                     "pass": lock_stats["pass"],
                     "fail": lock_stats["fail"],
                     "mode": mode,
-                    "updated_at": datetime.now().astimezone().isoformat(),
+                    "updated_at": _now_sh(),
                 }
                 state_path.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -380,7 +392,7 @@ def main() -> int:
     )
 
     man = {
-        "generated_at": datetime.now().astimezone().isoformat(),
+        "generated_at": _now_sh(),
         "source": "full_public_live_verify",
         "mode": f"{mode}_full_no_sample",
         "accumulate": mode == "accumulate",

@@ -6,6 +6,10 @@
 """
 from __future__ import annotations
 
+import sys
+from pathlib import Path as _PathForSys
+sys.path.insert(0, str(_PathForSys(__file__).resolve().parent))
+
 import argparse
 import json
 import shutil
@@ -13,6 +17,16 @@ import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+import sys
+
+
+def _now_sh() -> str:
+    try:
+        from timeutil import now_iso
+        return now_iso()
+    except Exception:
+        from datetime import timedelta
+        return datetime.now(timezone(timedelta(hours=8))).isoformat(timespec="seconds")
 
 
 def run(cmd: list[str], cwd: Path) -> None:
@@ -129,7 +143,7 @@ def main() -> int:
     mp = src / "manifest.json"
     if mp.exists():
         man = json.loads(mp.read_text(encoding="utf-8"))
-    now = datetime.now(timezone.utc).astimezone().isoformat()
+    now = _now_sh()
     readme = f"""# Probe export packages
 
 Automated **reachability probe** exports for lab/CI use.

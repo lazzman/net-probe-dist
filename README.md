@@ -4,7 +4,7 @@
 [![release](https://img.shields.io/github/v/release/lazzman/net-probe-dist?style=flat-square&label=release)](https://github.com/lazzman/net-probe-dist/releases/latest)
 [![release-date](https://img.shields.io/github/release-date/lazzman/net-probe-dist?style=flat-square&label=released)](https://github.com/lazzman/net-probe-dist/releases/latest)
 [![downloads](https://img.shields.io/github/downloads/lazzman/net-probe-dist/total?style=flat-square&label=downloads)](https://github.com/lazzman/net-probe-dist/releases/latest)
-![updated: 2026-08-03 20:01:48](https://img.shields.io/badge/updated-2026--08--03_20%3A01%3A48-informational?logo=github&logoColor=white)
+![updated: 2026-08-04 04:01:48](https://img.shields.io/badge/updated-2026--08--04_04%3A01%3A48-informational?logo=github&logoColor=white)
 ![result: success](https://img.shields.io/badge/result-success-brightgreen?logo=githubactions&logoColor=white)
 ![workers: 24](https://img.shields.io/badge/workers-24-blueviolet)
 ![elapsed: 1519.1s](https://img.shields.io/badge/elapsed-1519.1s-lightgrey)
@@ -24,7 +24,8 @@ Packages are attached to **GitHub Releases** (not stored in git history).
 
 | Field | Value |
 | --- | --- |
-| **Last update** | `2026-08-03T20:01:48.009015+00:00` |
+| **Last update** | `2026-08-04 04:01:48 CST` |
+| **Timezone** | `Asia/Shanghai (UTC+8)` |
 | **Workflow result** | `success` |
 | **Workers** | `24` |
 | **Elapsed** | `1519.1s` |

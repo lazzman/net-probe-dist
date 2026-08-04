@@ -2,6 +2,10 @@
 """汇总公开订阅：每源/每项目 候选数 vs live 可用数。"""
 from __future__ import annotations
 
+import sys
+from pathlib import Path as _PathForSys
+sys.path.insert(0, str(_PathForSys(__file__).resolve().parent))
+
 import argparse
 import json
 import re
@@ -10,6 +14,15 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
+
+
+def _now_sh() -> str:
+    try:
+        from timeutil import now_iso
+        return now_iso()
+    except Exception:
+        from datetime import datetime, timezone, timedelta
+        return datetime.now(timezone(timedelta(hours=8))).isoformat(timespec="seconds")
 
 
 def project_of(url: str) -> str:
@@ -227,7 +240,7 @@ def main() -> int:
     }
 
     report = {
-        "generated_at": datetime.now().astimezone().isoformat(),
+        "generated_at": (lambda: (__import__('timeutil', fromlist=['now_iso']).now_iso() if True else datetime.now().astimezone().isoformat()))(),
         "nodes_json": str(nodes_path),
         "outbounds": str(ob_path),
         "mode": nodes_data.get("mode"),

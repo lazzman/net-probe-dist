@@ -2,6 +2,10 @@
 """根据 STATUS.json / dist/manifest.json 渲染 README（含更新时间、worker 状态与 Badge）。"""
 from __future__ import annotations
 
+import sys
+from pathlib import Path as _PathForSys
+sys.path.insert(0, str(_PathForSys(__file__).resolve().parent))
+
 import argparse
 import json
 import os
@@ -74,10 +78,28 @@ def main() -> int:
     sub = status.get("subscription") or {}
     worker = status.get("worker") or {}
 
-    updated = status.get("updated_at") or man.get("generated_at") or datetime.now(CST).isoformat()
-    updated_display = str(updated)
-    # 短时间用于 badge（避免特殊字符）
-    updated_short = updated_display.replace("+08:00", " CST").replace("T", " ")[:19]
+    raw_updated = status.get("updated_at") or man.get("generated_at") or None
+    try:
+        from timeutil import to_shanghai_iso, to_shanghai_display, to_shanghai_badge, now_iso
+        updated_display = to_shanghai_iso(raw_updated) if raw_updated else now_iso()
+        updated_human = to_shanghai_display(raw_updated)
+        updated_short = to_shanghai_badge(raw_updated)
+    except Exception:
+        updated = raw_updated or datetime.now(CST).isoformat(timespec="seconds")
+        updated_display = str(updated)
+        updated_human = updated_display.replace("+08:00", " CST").replace("+00:00", " UTC").replace("T", " ")[:19] + " (→请用上海时区)"
+        # 尽力把 +00:00 转 +8
+        try:
+            s = str(updated).replace("Z", "+00:00")
+            dt = datetime.fromisoformat(s)
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+            dt = dt.astimezone(CST)
+            updated_display = dt.isoformat(timespec="seconds")
+            updated_human = dt.strftime("%Y-%m-%d %H:%M:%S CST")
+            updated_short = dt.strftime("%Y-%m-%d %H:%M:%S")
+        except Exception:
+            updated_short = updated_display.replace("T", " ")[:19]
 
     verified = sb.get("verified")
     public_unique = sb.get("public_unique")
@@ -158,7 +180,8 @@ Packages are attached to **GitHub Releases** (not stored in git history).
 
 | Field | Value |
 | --- | --- |
-| **Last update** | `{updated_display}` |
+| **Last update** | `{updated_human}` |
+| **Timezone** | `Asia/Shanghai (UTC+8)` |
 | **Workflow result** | `{fmt(conclusion)}` |
 | **Workers** | `{fmt(workers)}` |
 | **Elapsed** | `{elapsed_s}` |
@@ -250,7 +273,7 @@ python3 scripts/render_readme.py --workspace .
 
 Generated on the Actions runner / locally. **Published to GitHub Release**, not committed.
 
-**Last update:** `{updated_display}`  
+**Last update:** `{updated_human}`  
 **Workers:** `{fmt(workers)}` · **Result:** `{fmt(conclusion)}`
 
 Latest downloads:

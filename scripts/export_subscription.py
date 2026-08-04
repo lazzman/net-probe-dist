@@ -5,6 +5,10 @@
 """
 from __future__ import annotations
 
+import sys
+from pathlib import Path as _PathForSys
+sys.path.insert(0, str(_PathForSys(__file__).resolve().parent))
+
 import argparse
 import base64
 import copy
@@ -759,7 +763,11 @@ def main() -> int:
         ],
         "rules": ["MATCH,PROXY"],
     }
-    now = datetime.now(CST).isoformat()
+    try:
+        from timeutil import now_iso
+        now = now_iso()
+    except Exception:
+        now = datetime.now(CST).isoformat(timespec="seconds")
     (out / "verified_clash.yaml").write_text(
         f"# verified subscription / clash meta\n# generated_at: {now}\n# count: {len(proxies)}\n"
         + dump_val(clash)

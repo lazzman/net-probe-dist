@@ -6,6 +6,10 @@
 """
 from __future__ import annotations
 
+import sys
+from pathlib import Path as _PathForSys
+sys.path.insert(0, str(_PathForSys(__file__).resolve().parent))
+
 import argparse
 import ipaddress
 import json
@@ -178,7 +182,11 @@ def enrich_outbounds(
     force: bool = False,
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     """就地写入 o['_meta']['ip']，返回 (obs, stats)。cache 结构见文件。"""
-    now = datetime.now(CST).isoformat()
+    try:
+        from timeutil import now_iso
+        now = now_iso()
+    except Exception:
+        now = datetime.now(CST).isoformat(timespec="seconds")
     host_to_ip: dict[str, str | None] = {}
     hosts = []
     for o in obs:
