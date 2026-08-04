@@ -485,7 +485,26 @@ def safe_code(s: str, default: str = "ZZ") -> str:
     return s or default
 
 
+
+
 def labeled_outbound(o: dict) -> dict:
+    """导出用：节点名加上 [国家-类型] 前缀 + 更友好的后缀（ip/域名:端口_协议-id）。"""
+    o2 = copy.deepcopy(o)
+    ipinfo = (o.get("_meta") or {}).get("ip") or {}
+    ip = ipinfo.get("ip") or o.get("server") or ""
+    port = str(o.get("server_port") or "")
+    proto = o.get("type") or ""
+    base = str(o.get("tag") or f"{ip}:{port}")
+    # 友好后缀
+    if ipinfo.get("status") == "success":
+        suffix = f"{ip}:{port}_{proto.lower()}"
+    else:
+        suffix = f"{base}_{proto.lower()}"
+    # 避免重复前缀
+    if not re.match(r"^\[[A-Z0-9]{2,}-[a-z]+\]\s", base):
+        o2["tag"] = f"[{safe_code(ipinfo.get('countryCode') or 'ZZ', 'ZZ')}-{ipinfo.get('line_type') or 'unknown'}] {suffix}"
+    return o2
+
     """导出用：节点名加上 [国家-类型] 前缀，便于客户端识别。"""
     o2 = copy.deepcopy(o)
     ip = ip_meta(o2)
