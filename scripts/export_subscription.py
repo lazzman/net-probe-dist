@@ -630,6 +630,8 @@ def main() -> int:
     ap.add_argument("--no-enrich-ip", action="store_true", help="跳过 IP 检测")
     ap.add_argument("--split-ip", action="store_true", default=True, help="按归属地/类型拆分订阅（默认开）")
     ap.add_argument("--no-split-ip", action="store_true", help="不拆分订阅")
+    ap.add_argument("--no-dedupe-endpoint", action="store_true", help="禁用同 IP:端口 去重")
+    ap.add_argument("--dedupe-mode", default="ip-port", choices=["ip-port", "ip-port-path", "cred"], help="去重键")
     args = ap.parse_args()
     if args.no_enrich_ip:
         args.enrich_ip = False
@@ -692,6 +694,19 @@ def main() -> int:
         except Exception as e:
             print(f"[!] ip enrich failed: {e}", flush=True)
             ip_stats = {"error": str(e)}
+
+    # 同 IP:端口 多 UUID/多分享链 → 只保留 1 条（客户端观感去重）
+    dedupe_stats = {}
+    if not getattr(args, "no_dedupe_endpoint", False):
+        try:
+            _ipmod = _load_ip_enrich()
+            mode = getattr(args, "dedupe_mode", "ip-port") or "ip-port"
+            obs, dedupe_stats = _ipmod.dedupe_by_endpoint(obs, mode=mode)
+            src.write_text(json.dumps(obs, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            print(json.dumps({"endpoint_dedupe": dedupe_stats}, ensure_ascii=False), flush=True)
+        except Exception as e:
+            print(f"[!] endpoint dedupe failed: {e}", flush=True)
+            dedupe_stats = {"error": str(e)}
 
     uris: list[str] = []
     by: dict[str, list[str]] = {}
@@ -957,6 +972,7 @@ def main() -> int:
         },
         "legacy_clash_proxy_count": len(legacy_proxies),
         "ip_enrich": ip_stats,
+        "endpoint_dedupe": dedupe_stats,
         "splits": splits_index if args.split_ip else {},
         "split_assets": flat_assets if args.split_ip else [],
         "usage_splits": {

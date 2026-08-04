@@ -309,6 +309,86 @@ def enrich_outbounds(
     return obs, {"stats": stats, "cache": cache_out}
 
 
+
+def endpoint_key(o: dict[str, Any], mode: str = "ip-port") -> str:
+    """导出/展示用去重键。
+
+    - ip-port: type + 解析IP + port（同机同端口多 UUID 只留 1）
+    - ip-port-path: 再加上 ws/grpc path，避免误伤同端口多 path
+    - cred: 旧逻辑 type+server+port+uuid/password
+    """
+    t = (o.get("type") or "").lower()
+    ipinfo = (o.get("_meta") or {}).get("ip") or {}
+    ip = ipinfo.get("ip") or o.get("server") or ""
+    port = str(o.get("server_port") or "")
+    if mode == "cred":
+        cred = o.get("uuid") or o.get("password") or o.get("method") or ""
+        return f"{t}:{o.get('server') or ''}:{port}:{cred}"
+    path = ""
+    if mode == "ip-port-path":
+        tr = o.get("transport") or {}
+        path = str(tr.get("path") or tr.get("service_name") or "")
+        # reality 公钥也可区分极少见的同端口不同面板
+        tls = o.get("tls") or {}
+        pbk = ((tls.get("reality") or {}).get("public_key") or "")[:16]
+        path = f"{path}|{pbk}"
+    return f"{t}:{ip}:{port}:{path}"
+
+
+def _score_outbound(o: dict[str, Any]) -> tuple:
+    """选留优先级：配置更完整 / tag 更短稳定。"""
+    tls = o.get("tls") or {}
+    tr = o.get("transport") or {}
+    reality = tls.get("reality") or {}
+    ipinfo = (o.get("_meta") or {}).get("ip") or {}
+    return (
+        1 if reality.get("public_key") else 0,
+        1 if tls.get("server_name") else 0,
+        1 if tr.get("path") or tr.get("service_name") else 0,
+        1 if ipinfo.get("status") == "success" else 0,
+        1 if o.get("flow") else 0,
+        # 偏好已是 IP 的 server，减少域名重复观感
+        1 if str(o.get("server") or "").replace(".", "").isdigit() or ":" in str(o.get("server") or "") else 0,
+        -len(str(o.get("tag") or "")),
+    )
+
+
+def dedupe_by_endpoint(
+    obs: list[dict[str, Any]],
+    mode: str = "ip-port",
+) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    """按 endpoint 去重，返回 (deduped, stats)。"""
+    best: dict[str, dict[str, Any]] = {}
+    collisions: dict[str, int] = {}
+    for o in obs:
+        if not isinstance(o, dict):
+            continue
+        if o.get("type") == "wireguard":
+            # WG 仍按原 tag/私钥区分
+            key = f"wg:{(o.get('tag') or '')}:{(o.get('private_key') or '')[:16]}"
+        else:
+            key = endpoint_key(o, mode=mode)
+        if key not in best:
+            best[key] = o
+            collisions[key] = 1
+        else:
+            collisions[key] = collisions.get(key, 1) + 1
+            if _score_outbound(o) > _score_outbound(best[key]):
+                best[key] = o
+    out = list(best.values())
+    dup_groups = sum(1 for n in collisions.values() if n > 1)
+    removed = len([o for o in obs if isinstance(o, dict)]) - len(out)
+    stats = {
+        "mode": mode,
+        "input": len([o for o in obs if isinstance(o, dict)]),
+        "output": len(out),
+        "removed": removed,
+        "duplicate_endpoint_groups": dup_groups,
+    }
+    return out, stats
+
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="为 outbounds 做 IP 归属地/类型 enrichment")
     ap.add_argument("--workspace", type=Path, default=Path("."))
