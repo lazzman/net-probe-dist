@@ -4,16 +4,16 @@
 [![release](https://img.shields.io/github/v/release/lazzman/net-probe-dist?style=flat-square&label=release)](https://github.com/lazzman/net-probe-dist/releases/latest)
 [![release-date](https://img.shields.io/github/release-date/lazzman/net-probe-dist?style=flat-square&label=released)](https://github.com/lazzman/net-probe-dist/releases/latest)
 [![downloads](https://img.shields.io/github/downloads/lazzman/net-probe-dist/total?style=flat-square&label=downloads)](https://github.com/lazzman/net-probe-dist/releases/latest)
-![updated: 2026-08-28 20:39:28](https://img.shields.io/badge/updated-2026--08--28_20%3A39%3A28-informational?logo=github&logoColor=white)
+![updated: 2026-08-29 08:29:48](https://img.shields.io/badge/updated-2026--08--29_08%3A29%3A48-informational?logo=github&logoColor=white)
 ![result: success](https://img.shields.io/badge/result-success-brightgreen?logo=githubactions&logoColor=white)
 ![workers: 24](https://img.shields.io/badge/workers-24-blueviolet)
-![elapsed: 9785.6s](https://img.shields.io/badge/elapsed-9785.6s-lightgrey)
-![profiles: 2064](https://img.shields.io/badge/profiles-2064-blue)
-![live_hits: 2064](https://img.shields.io/badge/live__hits-2064-brightgreen)
-![live_fail: 72132](https://img.shields.io/badge/live__fail-72132-orange)
-![kept: 980](https://img.shields.io/badge/kept-980-blue)
-![new: 1084](https://img.shields.io/badge/new-1084-success)
-![dropped: 453](https://img.shields.io/badge/dropped-453-important)
+![elapsed: 9571.7s](https://img.shields.io/badge/elapsed-9571.7s-lightgrey)
+![profiles: 2198](https://img.shields.io/badge/profiles-2198-blue)
+![live_hits: 2201](https://img.shields.io/badge/live__hits-2201-brightgreen)
+![live_fail: 70540](https://img.shields.io/badge/live__fail-70540-orange)
+![kept: 1046](https://img.shields.io/badge/kept-1046-blue)
+![new: 1155](https://img.shields.io/badge/new-1155-success)
+![dropped: 349](https://img.shields.io/badge/dropped-349-important)
 
 
 Lab CI utility: periodic **HTTP reachability probes** over public endpoint lists, then publish **encoded profile packages**.
@@ -24,25 +24,25 @@ Packages are attached to **GitHub Releases** (not stored in git history).
 
 | Field | Value |
 | --- | --- |
-| **Last update** | `2026-08-28 20:39:28 CST` |
+| **Last update** | `2026-08-29 08:29:48 CST` |
 | **Timezone** | `Asia/Shanghai (UTC+8)` |
 | **Workflow result** | `success` |
 | **Workers** | `24` |
-| **Elapsed** | `9785.6s` |
+| **Elapsed** | `9571.7s` |
 | **Probe mode** | `accumulate_full_no_sample` |
-| **Candidates (unique)** | `420087` |
-| **Live PASS (pool hits)** | `2064` |
-| **Live FAIL** | `72132` |
-| **History retained** | `980` |
-| **New PASS** | `1084` |
-| **History dropped** | `453` |
-| **Previous public** | `1433` |
-| **Published profiles (deduped)** | `2064` |
-| **Share links (exportable)** | `1395` |
-| **YAML proxies (exportable)** | `1395` |
-| **Protocol mix** | `{"hysteria2": 175, "shadowsocks": 288, "vless": 802, "vmess": 113, "trojan": 17}` |
-| **Country mix** | `{"PL": 24, "RU": 22, "NL": 209, "DE": 93, "CA": 344, "DZ": 9, "GB": 63, "FI": 30, "SG": 95, "US": 184, "BR": 11, "TW": 12, "ZA": 4, "FR": 27, "LT": 8, "HK": 40, "JP": 37, "ES": 3, "TH": 4, "MY": 2, "LV": 14, "IE": 8, "CN": 5, "IT": 6, "NO": 16, "IN": 10, "TR": 7, "KZ": 14, "SE": 3, "GR": 2, "AU": 5, "AE": 1, "MD": 1, "AT": 2, "CH": 5, "EE": 5, "KR": 25, "BG": 6, "CZ": 12, "UA": 4, "RO": 2, "SC": 1, "AR": 2, "MX": 3, "DK": 2, "PE": 1, "IR": 1, "AL": 2, "CO": 4, "AM": 1, "VN": 1, "SA": 1, "ID": 1, "GE": 1}` |
-| **Line type mix** | `{"dc": 876, "proxy": 379, "home": 130, "mobile": 10}` |
+| **Candidates (unique)** | `418372` |
+| **Live PASS (pool hits)** | `2201` |
+| **Live FAIL** | `70540` |
+| **History retained** | `1046` |
+| **New PASS** | `1155` |
+| **History dropped** | `349` |
+| **Previous public** | `1395` |
+| **Published profiles (deduped)** | `2198` |
+| **Share links (exportable)** | `1642` |
+| **YAML proxies (exportable)** | `1642` |
+| **Protocol mix** | `{"shadowsocks": 303, "vmess": 97, "hysteria2": 192, "vless": 1025, "trojan": 25}` |
+| **Country mix** | `{"NL": 251, "US": 241, "DE": 123, "KR": 37, "PL": 40, "CA": 314, "DZ": 12, "RU": 35, "GB": 78, "FI": 32, "SG": 94, "SE": 9, "CH": 12, "TW": 14, "ZA": 6, "FR": 38, "LT": 13, "ES": 14, "HK": 36, "JP": 42, "TH": 5, "MY": 3, "CN": 10, "IE": 12, "IT": 12, "EE": 9, "KZ": 13, "TR": 8, "IN": 9, "NO": 16, "DK": 3, "BY": 2, "LV": 17, "AE": 2, "MD": 4, "VN": 1, "AT": 3, "PH": 1, "AU": 6, "SC": 5, "RO": 6, "AR": 2, "BG": 7, "BR": 8, "CZ": 6, "IR": 2, "PE": 1, "UA": 5, "AL": 4, "SK": 2, "GR": 1, "AM": 1, "CY": 1, "SA": 1, "AF": 1, "BZ": 2, "CR": 1, "IL": 3, "VG": 1, "HU": 1, "KG": 1, "MX": 4, "DO": 1, "RS": 1, "CO": 1}` |
+| **Line type mix** | `{"proxy": 453, "home": 165, "dc": 1019, "mobile": 9}` |
 
 ### Number funnel
 
