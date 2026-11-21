@@ -1,10 +1,10 @@
 # dist (build output)
 
-![updated: 2026-11-21 17:02:21](https://img.shields.io/badge/updated-2026--11--21_17%3A02%3A21-informational?logo=github&logoColor=white) ![result: success](https://img.shields.io/badge/result-success-brightgreen?logo=githubactions&logoColor=white) ![workers: 24](https://img.shields.io/badge/workers-24-blueviolet)
+![updated: 2026-11-22 01:32:02](https://img.shields.io/badge/updated-2026--11--22_01%3A32%3A02-informational?logo=github&logoColor=white) ![result: success](https://img.shields.io/badge/result-success-brightgreen?logo=githubactions&logoColor=white) ![workers: 24](https://img.shields.io/badge/workers-24-blueviolet)
 
 Generated on the Actions runner / locally. **Published to GitHub Release**, not committed.
 
-**Last update:** `2026-11-21 17:02:21 CST`  
+**Last update:** `2026-11-22 01:32:02 CST`  
 **Workers:** `24` · **Result:** `success`
 
 Latest downloads:
